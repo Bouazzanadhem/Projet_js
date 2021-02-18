@@ -1,14 +1,22 @@
 function login() {
-    let ID;
+  
     let z =localStorage.getItem("users");
     let p =JSON.parse(z);
-    let  login  =p.find(x => x.mail==ID);
+    let email=document.getElementById("w3lName").value
+    let password=document.getElementById("w3lSender").value
+    let  login  =p.find(x => x.email==email && x.mdp==password);
     console.log(login);
-    login.Username=document.getElementById("w3lName").value
-    login.password=document.getElementById("w3lSender").value
-  
-    localStorage.setItem("users",JSON.stringify(p))
     
+  
+    localStorage.setItem("UserConnecté",JSON.stringify(login))
+    if (login.role == "admin"){
+        window.location.replace("admin.html")
+        
+    }
+   else {
+    window.location.replace("user.html")
+        
+   } 
 
     
 }

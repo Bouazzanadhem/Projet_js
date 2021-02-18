@@ -126,7 +126,7 @@ Author URL: http://w3layouts.com
               <form action="https://sendmail.w3layouts.com/submitForm" method="post" class="">
                 <div class="form-grid">
                   <div class="input-field">
-                    <input  type="text" name="w3lName" id="w3lName" placeholder="Username" required="">
+                    <input  type="mail" name="w3lName" id="w3lName" placeholder="mail" required="">
                   </div>
                 </div>
                 <div class="form-grid">
@@ -134,7 +134,7 @@ Author URL: http://w3layouts.com
                     <input  type="password" name="w3lSender" id="w3lSender" placeholder="Password" required="">
                   </div>
                 </div>
-                <input type="submit" class=" btn btn-primary btn-style mt-3" value="Login">
+                <input onclick="login()" class=" btn btn-primary btn-style mt-3" value="Login">
                 <p class="text-center dont-do text-secondary">Don't have an account?
                   <a href="register.html" class="text-theme-2 font-weight-bold">Register Now</a>
                 </p>
@@ -375,7 +375,7 @@ Author URL: http://w3layouts.com
 <!-- bootstrap -->
 <script src="assets/js/bootstrap.min.js"></script>
  <!-- login -->
- <script src="login.js"></script>
+ <script src="assets/js/login.js"></script>
 </body>
 
 </html>
