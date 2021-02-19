@@ -1,16 +1,9 @@
 function deconect(){
     localStorage.removeItem("UserConnecté");
 }
-var p =localStorage.getItem("matchs")||[];
+var p =localStorage.getItem("matches")||[];
 var z=JSON.parse(p)
 function addmatch(){
-    // let id =Math.floor(Math.random()* 100);
-    // let match1={id:id,team1:"Lakers",team2:"Celtic",sale:"",image:"",nbplace:"10000",prix:"100$",date:"2021-03-01"}
-    // let match2={id:id,team1:"Raptors",team2:"Celtic",sale:"",image:"",nbplace:"15000",prix:"50$",date:"2021/02/22"}
-    // let match4={id:id,team1:"Celtic",team2:"Warriors",sale:"",image:"",nbplace:"12500",prix:"80$",date:"2021_02_25"}
-    // z.push(match4);
-    // console.log(p);
-    // localStorage.setItem("matchs",JSON.stringify(z));
     let match =``;
     z.forEach((x,index) => {
         console.log(index);
