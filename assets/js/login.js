@@ -20,3 +20,9 @@ function login() {
 
     
 }
+
+function logOut() {
+    
+    localStorage.removeItem("UserConnecté");
+  
+}

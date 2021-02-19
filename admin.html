@@ -18,14 +18,14 @@ Author URL: http://w3layouts.com
     <!-- Template CSS -->
     <link rel="stylesheet" href="assets/css/style-starter.css">
   </head>
-  <body>
+  <body  onload="addmatch()">
 
 <!--header-->
 <header id="site-header" class="fixed-top">
   <div class="container">
       <nav class="navbar navbar-expand-lg stroke px-0">
           <h1> <a class="navbar-brand" href="index.html">
-                  <span class="fa fa-home"></span> NBA
+                  <span class="fas fa-basketball-ball"></span> NBA
               </a></h1>
           <!-- if logo is image enable this   
   <a class="navbar-brand" href="#index.html">
@@ -66,9 +66,11 @@ Author URL: http://w3layouts.com
                       </div>
                   </li>
               </ul>
+              
               <div class="top-quote mt-lg-0">
-                <a  class="btn btn-style btn-primary">Admin</a>
-                <a href="login.html" class="btn btn-style btn-primary">Logout</a>
+                <a href="match.html" class="btn btn-style btn-primary"><span  class="fas fa-basketball-ball" ></span> Add
+                    match</a>
+                <a  href="login.html" class="btn btn-style btn-primary"onclick="logOut() ">Logout</a>
             </div>
               <!--/search-right-->
               <div class="search mx-3">
@@ -120,7 +122,69 @@ Author URL: http://w3layouts.com
     <div class="locations py-5">
         <div class="container py-lg-5 py-md-4 py-2">
             <div class="row">
-                <div class="col-lg-4 col-md-6 listing-img">
+                <div class="w3l-news" id="news">
+    <section id="grids5-block" class="py-5" >
+        <div class="container py-lg-5 py-md-4 py-2" >
+            <div class="row mt-lg-5 mt-4 pt-3" id="cardmatch">
+                <div class="col-lg-4 col-md-6 mt-md-0 mt-sm-4"  >
+                    <div class="grids5-info" >
+                        <span class="posted-date">
+                            <a href="#blog-single">
+                                <span class="small">2020</span>
+                                <span class="big">16</span>
+                                <span class="small">October</span>
+                            </a>
+                        </span>
+                        <a href="reservation.html" class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
+                                class="img-fluid news-image" /></a>
+                        <div class="blog-info">
+                            <a href="#category" class="category">world Cup</a>
+                            <h4><a href="#blog-single">Retail banks wake up to digital lending this year</a></h4>
+                            <p>Lorem ipsum dolor sit amet ad minus libero ullam ipsam quas earum!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
+                    <div class="grids5-info">
+                        <span class="posted-date">
+                            <a href="#blog-single">
+                                <span class="small">2020</span>
+                                <span class="big">19</span>
+                                <span class="small">October</span>
+                            </a>
+                        </span>
+                        <a href="#blog-single" class="d-block zoom"><img src="assets/images/p2.jpg" alt=""
+                                class="img-fluid news-image" /></a>
+                        <div class="blog-info">
+                            <a href="#category" class="category">Uncategorized</a>
+                            <h4><a href="#blog-single">A digital prescription for the pharma industry</a></h4>
+                            <p>Lorem ipsum dolor sit amet ad minus libero ullam ipsam quas earum!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-lg-0 mt-5">
+                    <div class="grids5-info">
+                        <span class="posted-date">
+                            <a href="#blog-single">
+                                <span class="small">2020</span>
+                                <span class="big">20</span>
+                                <span class="small">October</span>
+                            </a>
+                        </span>
+                        <a href="#blog-single" class="d-block zoom"><img src="assets/images/p3.jpg" alt=""
+                                class="img-fluid news-image" /></a>
+                        <div class="blog-info">
+                            <a href="#category" class="category">Uncategorized</a>
+                            <h4><a href="#blog-single">Harvest great ideas from your company’s best assets</a></h4>
+                            <p>Lorem ipsum dolor sit amet ad minus libero ullam ipsam quas earum!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+                <!-- <div class="col-lg-4 col-md-6 listing-img">
                     <a href="#url">
                         <div class="box16">
                             <div class="rentext-listing-category"><span>Buy</span><span>Rent</span></div>
@@ -154,8 +218,8 @@ Author URL: http://w3layouts.com
                             </ul>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 listing-img mt-md-0 mt-5">
+                </div> -->
+                <!-- <div class="col-lg-4 col-md-6 listing-img mt-md-0 mt-5">
                     <a href="#url">
                         <div class="box16">
                             <div class="rentext-listing-category"><span>Buy</span><span>Rent</span></div>
@@ -405,7 +469,7 @@ Author URL: http://w3layouts.com
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- pagination -->
             <div class="pagination-wrapper mt-5 pt-lg-3 text-center">
@@ -423,80 +487,7 @@ Author URL: http://w3layouts.com
     </div>
 </section>
  <!-- footers 20 -->
- <section class="w3l-footers-20">
-  <div class="footers20">
-    <div class="container">
-      <div class="footers20-content">
-        <div class="d-grid grid-col-4 grids-content">
-          <div class="column">
-            <a href="#url" class="link"><span class="fa fa-comments"></span></a>
-            <a href="#url" class="title-small">Free consultation</a>
-            <h4>Schedule a free consultation with our specialist.</h4>
-            <a href="#buytheme" class="btn btn-style btn-primary"> Schedule now
-              <span class="fa fa-long-arrow-right ml-2"></span> </a>
-          </div>
-          <div class="column">
-            <a href="#url" class="link"><span class="fa fa-phone"></span></a>
-            <a href="#url" class="title-small">help desk</a>
-            <h4>Do you have questions or want more infomation? Call Now</h4>
-            <a href="tel:+1-2345-678-11">
-              <p class="contact-phone mt-2"><span class="lnr lnr-phone-handset"></span> +1-2345-678-11
-              </p>
-            </a>
-          </div>
-          <div class="column mt-lg-0 mt-md-5">
-            <h4 class="mb-1">Signup for newsletter</h4>
-            <p>and get latest news and updates</p>
-            <form action="#" class="subscribe-form mt-4" method="post">
-              <div class="form-group">
-                <input type="email" name="subscribe" placeholder="Enter your email" required="">
-                <button class="btn btn-style btn-primary">Subscribe</button>
-              </div>
-            </form>
-            <ul class="footers-17_social">
-              <h4 class="d-inline mr-4">Follow us</h4>
-              <li><a href="#url" class="twitter"><span class="fa fa-twitter"></span></a></li>
-              <li><a href="#url" class="facebook"><span class="fa fa-facebook"></span></a></li>
-              <li><a href="#url" class="linkedin"><span class="fa fa-linkedin"></span></a></li>
-              <li><a href="#url" class="instagram"><span class="fa fa-instagram"></span></a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="d-grid grid-col-3 grids-content1 bottom-border">
-          <div class="columns copyright-grid align-self">
-            <p class="copy-footer-29">© 2020 Estate sale. All rights reserved | Designed by <a
-                href="https://w3layouts.com">W3layouts</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- move top -->
-  <button onclick="topFunction()" id="movetop" title="Go to top">
-    &#10548;
-  </button>
-  <script>
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function () {
-      scrollFunction()
-    };
-
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("movetop").style.display = "block";
-      } else {
-        document.getElementById("movetop").style.display = "none";
-      }
-    }
-
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
-  </script>
-  <!-- /move top -->
-</section>
+ 
 
 <!-- jQuery and Bootstrap JS -->
 <script src="assets/js/jquery-3.3.1.min.js"></script>
@@ -649,7 +640,9 @@ Author URL: http://w3layouts.com
 
 <!-- bootstrap -->
 <script src="assets/js/bootstrap.min.js"></script>
-
+<script src="https://kit.fontawesome.com/737ba8872d.js" crossorigin="anonymous"></script>
+<script src="assets/js/login.js"></script>
+<script src="assets/js/admin.js"></script>
 </body>
 
 </html>
