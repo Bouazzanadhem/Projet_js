@@ -123,12 +123,12 @@ Author URL: http://w3layouts.com
       <div class="top-map">
         <div class="row map-content-9">
           <div class="col-lg-8">
-            <div class="contact-form">
+            <div class="contact-form"  style="margin: inherit;">
               <form action="https://sendmail.w3layouts.com/submitForm" method="post" class="">
                 <div style="padding-bottom: 40px;"    class="form-grid">
                     <div class="input-field mt-4">
                       <!-- <input type="email" name="w3lName" id="email" placeholder="E-mail" required=""> -->
-                      <select id="inputState" class="form-control form-control-lg" >
+                      <select id="inputState1" class="form-control form-control-lg" >
                           <option selected>Select Team 1</option>
                           <option value="Lakers">Lakers</option>
                           <option value="Celtic">Celtic</option>
@@ -137,7 +137,7 @@ Author URL: http://w3layouts.com
                         </select>
                     </div>
                     <div class="input-field mt-4">
-                      <select id="inputState" class="form-control form-control-lg" >
+                      <select id="inputState2" class="form-control form-control-lg" >
                         <option selected>Select Team 2</option>
                         <option value="Lakers">Lakers</option>
                         <option value="Celtic">Celtic</option>
@@ -150,12 +150,12 @@ Author URL: http://w3layouts.com
                
                 <div style="padding-bottom: 40px;" class="form-grid">
                     <div class="input-field mt-4">
-                        <select id="inputState" class="form-control form-control-lg" >
+                        <select id="inputState3" class="form-control form-control-lg" >
                           <option selected>Select salle</option>
-                          <option value="Lakers">KFC Yum! Center</option>
-                          <option value="Celtic">Dean Smith Center</option>
-                          <option value="Warriors">Centre Canadian Tire</option>
-                          <option value="Raptors">Spectrum Center</option>
+                          <option value="KFC Yum! Center">KFC Yum! Center</option>
+                          <option value="Dean Smith Center">Dean Smith Center</option>
+                          <option value="Centre Canadian Tire">Centre Canadian Tire</option>
+                          <option value="Spectrum Center">Spectrum Center</option>
                         </select>
                 
                       </div>
@@ -169,21 +169,21 @@ Author URL: http://w3layouts.com
                
                 <div class="form-grid">
                     <div class="input-group mb-3">
-                        <input type="number" class="form-control form-control-lg" placeholder="Select seats" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <input id="seats" type="number" class="form-control form-control-lg" placeholder="Select seats" aria-label="Recipient's username" aria-describedby="button-addon2">
                         
                       </div>
                  
                   <div class="input-group mb-3">
                     <span class="input-group-text">$</span>
                     
-                    <input type="text" class="form-control form-control-lg" placeholder="Select price"aria-label="Dollar amount (with dot and two decimal places)">
+                    <input id="price" type="text" class="form-control form-control-lg" placeholder="Select price"aria-label="Dollar amount (with dot and two decimal places)">
                     <span class="input-group-text">0.00</span>
                   </div>
                   <div class="input-group mb-3">
-                    <input type="date" class="form-control form-control-lg" placeholder="Select date" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <input  id="date"  type="date" class="form-control form-control-lg" placeholder="Select date" aria-label="Recipient's username" aria-describedby="button-addon2">
                     
                   </div>
-                  <input class=" btn btn-primary btn-style mt-3" value="Submit">
+                  <input onclick="AddMatch()"  class=" btn btn-primary btn-style mt-3" value="Submit">
                 </div>
                   
                 
@@ -385,7 +385,7 @@ Author URL: http://w3layouts.com
 <!-- bootstrap -->
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/737ba8872d.js" crossorigin="anonymous"></script>
-
+<script src="assets/js/add.match.js"></script>
 </body>
 
 </html>
