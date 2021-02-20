@@ -16,5 +16,6 @@ function AddMatch(){
     z.push(matches);
     localStorage.setItem("matches",JSON.stringify(z));
     console.log(g);
-
+    window.open("http://127.0.0.1:5500/Projet_js/admin.html")
 }
+
