@@ -37,18 +37,18 @@ function addmatch(){
             <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
                 <div class="grids5-info">
                     <span class="posted-date" style="background-color: green;">
-                        <a href="reservation.html">
+                        <a>
                         <span class="small">${x.date[0]+x.date[1]+x.date[2]+x.date[3]}</span>
                         <span class="big">${x.date[8]+x.date[9]}</span>
                         <span class="small">${x.date[5]+x.date[6]}</span>
                         </a>
                     </span>
-                    <a href="reservation.html" class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
+                    <a class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
                     class="img-fluid news-image" /></a>
                     <div class="blog-info">
                     <a href="#category" class="category">${x.salle}</a>
                     <h4><a href="#blog-single">${x.team1} VS ${x.team2}</a></h4>
-                    <p>Lorem ipsum dolor sit amet ad minus libero ullam ipsam quas earum!</p>
+                    <p><a  class="btn btn-style btn-primary" style="margin:auto 50px" onclick="reservation(${x.id})">Reserver</a></p>
                     </div>
                 </div>
             </div>`
@@ -57,4 +57,32 @@ function addmatch(){
         
     });
     document.getElementById("cardmatch").innerHTML= match
+}
+function reservation(a){
+    console.log(z);
+    let reserv=z.find(x=>x.id == a);
+    // document.getElementById("match").value= reserv.team1 + "VS" + reserv.team2;
+    // document.getElementById("arena").value=reserv.salle;
+    // document.getElementById("date").value=reserv.date;
+    // window.location.open("reservation.html")
+    console.log(reserv);
+//     let reservation=`<div class="col-lg-7 pl-lg-0">
+//     <div class="w3l-right-info">
+//         <h3 class="title-big" id="match">${reserv.team1} VS ${reserv.team2}</h3>
+//         <h5 class="mt-4" id="arena">${reserv.salle}</h5>
+//         <p class="mt-4" id="date">${reserv.date}</p>
+//         <a href="#small-dialog1" class="popup-with-zoom-anim play-view d-block mt-md-5 mt-4">
+//             <span class="video-play-icon">
+//                 <span class="fa fa-play"></span>
+//             </span>
+//         </a>
+//         <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
+//         <div id="small-dialog1" class="zoom-anim-dialog mfp-hide">
+//             <iframe src="https://www.youtube.com/embed/jqP3m3ElcxA" frameborder="0" allowfullscreen=""></iframe>
+//         </div>
+//     </div>
+// </div>`
+
+//     window.open('reservation.html', '_blank');
+//     document.getElementById("reservmatch").innerHTML= reservation
 }
