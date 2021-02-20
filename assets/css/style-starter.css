@@ -539,7 +539,10 @@ pre {
   position: relative;
   width: 100%;
   padding-right: 15px;
-  padding-left: 15px; }
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+ }
 
 .col {
   flex-basis: 0;
@@ -11183,7 +11186,7 @@ a.title-small {
   height: 100%; }
 
 .w3l-left-img2 {
-  background: url(../images/about1.jpg) no-repeat center center;
+  background: url(../images/1200px-Dean_Smith_Center1.jpg) no-repeat center center;
   background-size: cover;
   position: relative;
   border-top-left-radius: var(--border-radius);
