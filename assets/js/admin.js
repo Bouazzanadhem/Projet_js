@@ -14,17 +14,18 @@ function addmatch(){
                         <span class="small">${x.date[8]+x.date[9]}</span>
                         </a>
                     </span>
-                    <a href="reservation.html" class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
+                    <a href="reservation.html" class="d-block zoom"><img src="assets/images/1200px-Dean_Smith_Center1.jpg " alt=""
                     class="img-fluid news-image" /></a>
                     <div class="blog-info">
-                    <a href="#category" class="category"> NBA World Cup</a>
+                    <h3> <a href="#category" class="fas fa-basketball-ball">  NBA World Cup</a></h3>
                     <h4><a href="#blog-single">${x.team1} VS ${x.team2}</a></h4>
                     <p> Salle : ${x.salle}</p>
                     <p>Reamining Seats : ${x.nbplace}</p>
                     <p> Price: ${x.prix} $</p>
+                    
                     <div class="top-quote mt-lg-0">
-                <a  class="btn btn-style btn-primary">Add</a>
-                <a  href="#"class="btn btn-style btn-primary">Delete</a>
+                <a  style="margin-top:30px"  class="btn btn-style btn-success">Add</a>
+                <a  style="margin-top:30px"  href="#"class="btn btn-style btn-danger" onclick=" Delete(${x.match})" >Delete</a>
             </div>
                     </div>
                 </div>
@@ -33,3 +34,13 @@ function addmatch(){
     });
     document.getElementById("cardmatch").innerHTML= match
 }
+function Delete(a) {
+   
+    let z =localStorage.getItem("matches");
+    let p =JSON.parse(z);
+    p.pop(a);
+    localStorage.setItem("matches",JSON.stringify(p))
+    window.location.reload()
+
+}
+
