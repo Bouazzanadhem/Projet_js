@@ -10,8 +10,8 @@ function addmatch(){
                     <span class="posted-date">
                         <a href="#blog-single">
                         <span class="small">${x.date[0]+x.date[1]+x.date[2]+x.date[3]}</span>
-                        <span class="big">${x.date[5]+x.date[6]}</span>
-                        <span class="small">${x.date[8]+x.date[9]}</span>
+                        <span class="big">${x.date[8]+x.date[9]}</span>
+                        <span class="small">${x.date[5]+x.date[6]}</span>
                         </a>
                     </span>
                     <a href="reservation.html" class="d-block zoom"><img src="assets/images/1200px-Dean_Smith_Center1.jpg " alt=""
@@ -24,7 +24,7 @@ function addmatch(){
                     <p> Price: ${x.prix} $</p>
                     
                     <div class="top-quote mt-lg-0">
-                <a  style="margin-top:30px"  class="btn btn-style btn-success">Add</a>
+                <a  style="margin-top:30px"  onclick= "update(${x.match})" class="btn btn-style btn-success">Update</a>
                 <a  style="margin-top:30px"  href="#"class="btn btn-style btn-danger" onclick=" Delete(${x.match})" >Delete</a>
             </div>
                     </div>
@@ -44,3 +44,22 @@ function Delete(a) {
 
 }
 
+
+function update(b) {
+    let match;
+    let z =localStorage.getItem("matches");
+    let p =JSON.parse(z);
+    match=b;
+   console.log(b);
+   let update =p.find(x => x.match==b);
+   console.log(update);
+ 
+  document.getElementById("inputState1").value =update.team1;
+  document.getElementById("inputState2").value =update.team2;
+  document.getElementById("inputState3").value=update.salle;
+  document.getElementById("formFile").value=update.image;
+  document.getElementById("seats").value=update.nbplace;
+  document.getElementById("price").value=update.prix;
+ document.getElementById("date").value=update.date;
+ window.open("http://127.0.0.1:5500/Projet_js/match.html")
+}
