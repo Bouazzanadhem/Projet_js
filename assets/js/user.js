@@ -48,6 +48,8 @@ function addmatch(){
                     <div class="blog-info">
                     <a href="#category" class="category">${x.salle}</a>
                     <h4><a href="#blog-single">${x.team1} VS ${x.team2}</a></h4>
+                    <p>Nbre de place : ${x.nbplace} </p>
+                    <p>Prix : ${x.prix}$ </p>
                     <p><a  class="btn btn-style btn-primary" style="margin:auto 50px" onclick="reservation(${x.id})">Reserver</a></p>
                     </div>
                 </div>
@@ -65,7 +67,7 @@ function reservation(a){
     // document.getElementById("arena").value=reserv.salle;
     // document.getElementById("date").value=reserv.date;
     // window.location.open("reservation.html")
-    console.log(reserv);
+    console.log(typeof(reserv));
 //     let reservation=`<div class="col-lg-7 pl-lg-0">
 //     <div class="w3l-right-info">
 //         <h3 class="title-big" id="match">${reserv.team1} VS ${reserv.team2}</h3>
