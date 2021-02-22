@@ -43,7 +43,7 @@ Author URL: http://w3layouts.com
                       <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item active">
-                      <a class="nav-link" href="listing.html">Listing</a>
+                      <a class="nav-link" href="user.html">Listing</a>
                   </li>
                   <li class="nav-item dropdown @@property__active">
                       <a class="nav-link dropdown-toggle" href="#url" id="navbarDropdown" role="button"
@@ -118,6 +118,10 @@ Author URL: http://w3layouts.com
 <div class="w3l-news" id="news">
     <section id="grids5-block" class="" >
         <div class="container py-lg-5 py-md-4 py-2" >
+          <div class="input-group mb-3" style="max-width: 300px;" oninput="recherche()">
+            <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="recherche by team1 ou team2" style="margin: auto;">
+          </div>
             <div class="row mt-lg-5 mt-4 pt-3" id="cardmatch">
                 <div class="col-lg-4 col-md-6 mt-md-0 mt-sm-4"  >
                     <div class="grids5-info" >
@@ -177,6 +181,7 @@ Author URL: http://w3layouts.com
         </div>
     </section>
 </div>
+
 <!-- <script>
     let userconnecte=localStorage.getItem('UserConnecté');
     console.log(userconnecte.team);
@@ -333,7 +338,7 @@ Author URL: http://w3layouts.com
 <!-- bootstrap -->
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/user.js"></script>
-
+<script src="https://kit.fontawesome.com/737ba8872d.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
