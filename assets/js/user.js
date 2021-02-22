@@ -1,14 +1,18 @@
 function deconect(){
     localStorage.removeItem("UserConnecté");
 }
+
 var p =localStorage.getItem("matches")||[];
 var z=JSON.parse(p)
 var user = localStorage.getItem("UserConnecté");
 var usser = JSON.parse(user)
 var d = new Date();
 var n = d.getDate();
+
 // var id=1;
 function addmatch(){
+    document.getElementById("name").innerHTML = usser.fname
+    document.getElementById("team").innerHTML = usser.team
     console.log(n);
     console.log(usser.team);
     let match =``;
@@ -64,7 +68,7 @@ function addmatch(){
 var a;
 function navigate(a){
     //  id1 = a;
-    setTimeout(() => console.log("id"+id1),3000)
+    // setTimeout(() => console.log("id"+id1),3000)
     
     // alert(ID);
     // let reserv=z.find(x=>x.id == a);
@@ -102,7 +106,7 @@ function reservation(){
 //  alert(id);      
 
 
-setTimeout(() => console.log(id),3000)
+// setTimeout(() => console.log(id),3000)
 }
 
 function recherche(){
@@ -164,4 +168,14 @@ function recherche(){
     }
     document.getElementById("cardmatch").innerHTML= match 
 
+}
+let x = document.getElementById("prix").value;
+function calcul(){
+    let nbre = document.getElementById("ticket").value;
+    let y=x;
+    // console.log(x);
+    // console.log(nbre);
+    let reserv=Number(y)*Number(nbre);
+    console.log(reserv);
+    document.getElementById("prix").value = reserv;
 }
