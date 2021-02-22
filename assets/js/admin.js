@@ -38,23 +38,20 @@ function addmatch(){
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div style="width: 900px;"class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Update macth</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+  <div class="modal-content"style=" width: 0px;height:0px">
+     
       <div class="modal-body">
       <section class="w3l-contact-7 " id="contact">
-      <div class="contacts-9  pt-md-4">
+      <div ;class="contacts-9  pt-md-4">
         <div class="container">
           <div class="top-map">
-            <div style="width: 900px" class="row map-content-9">
-              <div class="col-lg-8" style="margin: auto;">
-                <div style="width: 600px"class="contact-form">
+            <div class="row map-content-9">
+              <div class="col-lg-8">
+                <div style="width: 600px;margin-top: 50px;"class="contact-form">
                   <form action="https://sendmail.w3layouts.com/submitForm" method="post" class="">
                     <div style="padding-bottom: 40px;"    class="form-grid">
                         <div class="input-field mt-4">
-                          <!-- <input type="email" name="w3lName" id="email" placeholder="E-mail" required=""> -->
+                          
                           <select id="inputState1" class="form-control form-control-lg" >
                             <option selected>Select Team 1</option>
                             <option value="Lakers">Los Angeles Lakers</option>
@@ -129,8 +126,14 @@ function addmatch(){
                       <div class="input-group mb-3">
                         <input  id="date"  type="date" class="form-control form-control-lg" placeholder="Select date" aria-label="Recipient's username" aria-describedby="button-addon2">
                         
-                      
-                      
+                        
+                      </div>
+                      <div class="top-quote mt-lg-0">
+                        
+                        
+                        <a    href="#"class="btn btn-style btn-primary" onclick= "save(${x.id})" >Save</a>
+                        <a  style="margin-left:25px"  href="#"class="btn btn-style btn-primary"data-bs-dismiss="modal" >Close</a>
+                      </div>
                   </form>
                 </div>
               </div>
@@ -140,11 +143,8 @@ function addmatch(){
       </div>
     </section>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-        <button type="button"  onclick="save(${x.id})" class="btn btn-primary">Save changes</button>
       </div>
-    </div>
+   
   </div>
 </div> `
                
@@ -202,4 +202,13 @@ function save() {
  save.date=document.getElementById("date").value;
  localStorage.setItem("matches",JSON.stringify(p))
   window.location.reload()
+}
+
+function Search(){
+
+
+  let search = document.getElementById("search-input").value;
+    console.log(search);
+    let fill = z.filter(x => ((x.team1).startsWith(search)) || ((x.team2).startsWith(search)));
+    console.log( fill);
 }
