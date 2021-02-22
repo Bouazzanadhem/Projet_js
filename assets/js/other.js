@@ -14,7 +14,7 @@ function addmatch(){
     // console.log(usser.team);
     let match =``;
     z.forEach(x => {
-        if (((x.team1 == usser.team)||(x.team2 == usser.team)) && (n >= Number(x.date[8]+x.date[9]))){
+        if (((x.team1 != usser.team)&&(x.team2 != usser.team)) && (n >= Number(x.date[8]+x.date[9]))){
                 match +=`
             <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
                 <div class="grids5-info">
@@ -34,7 +34,7 @@ function addmatch(){
                     </div>
                 </div>
             </div>`
-        }else if (((x.team1 == usser.team)||(x.team2 == usser.team)) && (n < Number(x.date[8]+x.date[9]))) {
+        }else if (((x.team1 != usser.team)&&(x.team2 != usser.team)) && (n < Number(x.date[8]+x.date[9]))) {
             match +=`
             <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
                 <div class="grids5-info">
@@ -62,50 +62,6 @@ function addmatch(){
     });
     document.getElementById("cardmatch").innerHTML= match
 }
-var a;
-function navigate(a){
-    //  id1 = a;
-    // setTimeout(() => console.log("id"+id1),3000)
-    
-    // alert(ID);
-    // let reserv=z.find(x=>x.id == a);
-    // document.getElementById("match").value= reserv.team1 + "VS" + reserv.team2;
-    // document.getElementById("arena").value=reserv.salle;
-    // document.getElementById("date").value=reserv.date;
-     window.open(`reservation.html`)
-    // console.log(reserv);
-//     let reservation=`<div class="col-lg-7 pl-lg-0">
-//     <div class="w3l-right-info">
-//         <h3 class="title-big" id="match">${reserv.team1} VS ${reserv.team2}</h3>
-//         <h5 class="mt-4" id="arena">${reserv.salle}</h5>
-//         <p class="mt-4" id="date">${reserv.date}</p>
-//         <a href="#small-dialog1" class="popup-with-zoom-anim play-view d-block mt-md-5 mt-4">
-//             <span class="video-play-icon">
-//                 <span class="fa fa-play"></span>
-//             </span>
-//         </a>
-//         <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
-//         <div id="small-dialog1" class="zoom-anim-dialog mfp-hide">
-//             <iframe src="https://www.youtube.com/embed/jqP3m3ElcxA" frameborder="0" allowfullscreen=""></iframe>
-//         </div>
-//     </div>
-// </div>`
-
-//     window.open('reservation.html', '_blank');
-//     document.getElementById("reservmatch").innerHTML= reservation
-return a;
-}
-
-var id = navigate(a);
-
-function reservation(){
-//     console.log(id);
-//  alert(id);      
-
-
-// setTimeout(() => console.log(id),3000)
-}
-
 function recherche(){
     let search = document.getElementById("exampleFormControlInput1").value;
     // console.log(search);
@@ -165,14 +121,4 @@ function recherche(){
     }
     document.getElementById("cardmatch").innerHTML= match 
 
-}
-let x = document.getElementById("prix").value;
-function calcul(){
-    let nbre = document.getElementById("ticket").value;
-    let y=x;
-    // console.log(x);
-    // console.log(nbre);
-    let reserv=Number(y)*Number(nbre);
-    console.log(reserv);
-    document.getElementById("prix").value = reserv;
 }
