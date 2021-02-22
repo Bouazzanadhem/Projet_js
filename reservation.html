@@ -126,18 +126,15 @@ Author URL: http://w3layouts.com
                 </div>
                 <div class="col-lg-7 pl-lg-0">
                     <div class="w3l-right-info" id="reservmatch">
-                        <h3 class="title-big" id="match">fffff</h3>
-                        <h5 class="mt-4" id="arena">epe</h5>
-                        <p class="mt-4" id="date">aaaa</p>
-                        <a href="#small-dialog1" class="popup-with-zoom-anim play-view d-block mt-md-5 mt-4">
-                            <span class="video-play-icon">
-                                <span class="fa fa-play"></span>
-                            </span>
-                        </a>
-                        <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
-                        <div id="small-dialog1" class="zoom-anim-dialog mfp-hide">
-                            <iframe src="https://www.youtube.com/embed/jqP3m3ElcxA" frameborder="0" allowfullscreen=""></iframe>
+                        <h3 class="title-big" id="match">Home Team VS Away Team</h3>
+                        <h5 class="mt-4" id="arena">salle de match </h5>
+                        <h5 class="mt-4" id="nbrplace">Nombre de place</h5>
+                        <div class="input-group mb-3">
+                          <input type="number" class="form-control" placeholder="nbre Ticket" max="4" min="0" oninput="calcul()" id="ticket">
+                          
+                          <input type="number" class="form-control" placeholder="50" value="50" id="prix" disabled>
                         </div>
+                        <a href="" class="btn btn-style btn-primary" style="margin: auto 150px;">Reserver</a>
                     </div>
                 </div>
             </div>
