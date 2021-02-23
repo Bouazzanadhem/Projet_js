@@ -1,6 +1,24 @@
 var p =localStorage.getItem("matches")||[];
 var z=JSON.parse(p)
+var img = "";
+var listimage = []
+function openFile(event) {
 
+    var input = event.target;
+
+    var reader = new FileReader();
+
+    reader.onload = function () {
+
+        img = reader.result;
+        console.log(img);
+        listimage.push(img);
+
+
+
+    };
+    reader.readAsDataURL(input.files[0]);
+}
 function AddMatch(){
    
     
@@ -8,6 +26,7 @@ function AddMatch(){
     let b = document.getElementById("inputState2").value;
     let c= document.getElementById("inputState3").value;
     let d = document.getElementById("formFile").value;
+    
     let e = document.getElementById("seats").value;
     let f = document.getElementById("price").value;
     let g = document.getElementById("date").value;
