@@ -15,8 +15,8 @@ var n = d.getDate();
 function addmatch(){
     document.getElementById("name").innerHTML = usser.fname
     document.getElementById("team").innerHTML = usser.team
-    // console.log(n);
-    // console.log(usser.team);
+    console.log(n);
+    console.log(usser.team);
     // let match =``;
     // z.forEach(x => {
     //     if (((x.team1 == usser.team)||(x.team2 == usser.team)) && (n >= Number(x.date[8]+x.date[9]))){
@@ -30,6 +30,7 @@ function addmatch(){
     //                     <span class="small">${x.date[5]+x.date[6]}</span>
     //                     </a>
     //                 </span>
+    //                 <div class="rentext-listing-category"><span>Done</span></div>
     //                 <a  class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
     //                 class="img-fluid news-image" /></a>
     //                 <div class="blog-info">
