@@ -2,6 +2,7 @@ var p =localStorage.getItem("matches")||[];
 var z=JSON.parse(p)
 function addmatch(){
     let match =``;
+    let i=1;
     z.forEach((x,index) => {
         console.log(index);
         match +=`
@@ -14,7 +15,7 @@ function addmatch(){
                         <span class="small">${x.date[5]+x.date[6]}</span>
                         </a>
                     </span>
-                    <a href="reservation.html" class="d-block zoom"><img src="assets/images/1200px-Dean_Smith_Center1.jpg " alt=""
+                    <a href="reservation.html" class="d-block zoom"><img src="${x.img} " alt=""
                     class="img-fluid news-image" /></a>
                     <div class="blog-info">
                     <h3> <a href="#category" class="fas fa-basketball-ball">  NBA World Cup</a></h3>
@@ -30,7 +31,7 @@ function addmatch(){
                    
                   <button type="button"   onclick=" update(${x.id})" style="margin-top:30px"  data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"class="btn btn-style btn-success"  >Update  </button>
                 
-                <a  style="margin-top:30px"  href="#"class="btn btn-style btn-danger" onclick=" Delete(${x.match})" >Delete</a>
+                <a  style="margin-top:30px"  href="#"class="btn btn-style btn-danger" onclick="Delete(${i})" >Delete</a>
                 </div>
                 </div>
 </div>
@@ -148,18 +149,21 @@ function addmatch(){
   </div>
 </div> `
                
-
+i++
 
     });
     document.getElementById("cardmatch").innerHTML= match
 }
+
 function Delete(a) {
-   
+  
     let z =localStorage.getItem("matches");
     let p =JSON.parse(z);
-    p.pop(a);
+  
+   p.splice(a-1,1);
+console.log(p);
     localStorage.setItem("matches",JSON.stringify(p))
-    window.location.reload()
+     window.location.reload()
 
 }
 let ID;
