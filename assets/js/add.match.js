@@ -1,7 +1,7 @@
 var p =localStorage.getItem("matches")||[];
 var z=JSON.parse(p)
 var img = "";
-var listimage = []
+var listimage = [];
 function openFile(event) {
 
     var input = event.target;
@@ -38,5 +38,10 @@ function AddMatch(){
     listimage=[];
     console.log(g);
     window.open("http://127.0.0.1:5500/Projet_js/admin.html")
+}
+function logOut() {
+    
+    localStorage.removeItem("UserConnecté");
+  
 }
 
