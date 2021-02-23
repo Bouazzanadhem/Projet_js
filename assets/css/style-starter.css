@@ -11132,7 +11132,7 @@ a.title-small {
 
 .rentext-listing-category {
   position: absolute;
-  left: 10px;
+  right: 10px;
   top: 10px;
   z-index: 2; }
 
@@ -11170,7 +11170,7 @@ a.title-small {
   box-shadow: 0px 9px 24px 5px rgba(0, 0, 0, 0.04); }
 
 .w3l-left-img {
-  background: url(../images/who.jpg) no-repeat center center;
+  background: url(../images/Kobe.jpg) no-repeat center center;
   background-size: cover;
   position: relative;
   border-top-left-radius: var(--border-radius);

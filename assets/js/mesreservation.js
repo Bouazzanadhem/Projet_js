@@ -1,17 +1,22 @@
 function deconect(){
     localStorage.removeItem("UserConnecté");
 }
-var p =localStorage.getItem("matches")||[];
-var z=JSON.parse(p)
+var p =localStorage.getItem("matches");
+var match=JSON.parse(p)
 var user = localStorage.getItem("UserConnecté");
 var usser = JSON.parse(user)
+var q =localStorage.getItem("reservmatch");
+var matchreserved = JSON.parse(q)
+console.log(match);
+console.log(usser);
+console.log(matchreserved);
 var d = new Date();
 var n = d.getDate();
 function addmatch(){
     document.getElementById("name").innerHTML = usser.fname
     document.getElementById("team").innerHTML = usser.team
-    // console.log(n);
-    // console.log(usser.team);
+    console.log(n);
+    console.log(usser.team);
     // let match =``;
     // z.forEach(x => {
     //     if (((x.team1 == usser.team)||(x.team2 == usser.team)) && (n >= Number(x.date[8]+x.date[9]))){
@@ -25,6 +30,7 @@ function addmatch(){
     //                     <span class="small">${x.date[5]+x.date[6]}</span>
     //                     </a>
     //                 </span>
+    //                 <div class="rentext-listing-category"><span>Done</span></div>
     //                 <a  class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
     //                 class="img-fluid news-image" /></a>
     //                 <div class="blog-info">
@@ -50,8 +56,8 @@ function addmatch(){
     //                 <div class="blog-info">
     //                 <a href="#category" class="category">${x.salle}</a>
     //                 <h4><a href="#blog-single">${x.team1} VS ${x.team2}</a></h4>
-    //                 <p>Nbre de place : ${x.nbplace} </p>
-    //                 <p>Prix : ${x.prix}$ </p>
+    //                 <p>Nbre de place reservé : ${x.nbplace} </p>
+    //                 <p>Prix Total : ${x.prix}$ </p>
     //                 <p><a  class="btn btn-style btn-primary"  style="margin:auto 50px" onclick="navigate(${x.id})">Reserver</a></p>
     //                 </div>
     //             </div>
