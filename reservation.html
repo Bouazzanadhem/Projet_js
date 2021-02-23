@@ -9,7 +9,7 @@ Author URL: http://w3layouts.com
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Estate sale - Real Estate Category Bootstrap Responsive Website Template - About : W3layouts</title>
+    <title>Resérvation</title>
 
     <!-- google fonts -->
     <link href="//fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@ Author URL: http://w3layouts.com
     <!-- Template CSS -->
     <link rel="stylesheet" href="assets/css/style-starter.css">
   </head>
-  <body onload="reservation()">
+  <body onload="addmatch()">
 
 <!--header-->
 <header id="site-header" class="fixed-top">
@@ -39,35 +39,20 @@ Author URL: http://w3layouts.com
 
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul class="navbar-nav ml-lg-5 mr-auto">
-                  <li class="nav-item @@home__active">
-                      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  <li class="nav-item @@My Team__active">
+                      <a class="nav-link" href="user.html">My Team<span class="sr-only">(current)</span></a>
                   </li>
-                  <li class="nav-item @@listing__active">
-                      <a class="nav-link" href="user.html">Listing</a>
+                  <li class="nav-item @@Other Team__active">
+                      <a class="nav-link" href="otherteam.html">Other Team</a>
                   </li>
-                  <li class="nav-item dropdown @@property__active">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Property <span class="fa fa-angle-down"></span>
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item @@ps__active" href="property-single.html">Single property</a>
-                      </div>
-                  </li>
-                  <li class="nav-item dropdown active">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Pages <span class="fa fa-angle-down"></span>
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item active" href="about.html">About us</a>
-                          <a class="dropdown-item @@contact__active" href="contact.html">Contact us</a>
-                      </div>
+                  <li class="nav-item @@My Reservations__active">
+                    <a class="nav-link" href="mesreservation.html">My Reservation</a>
                   </li>
               </ul>
               <div class="top-quote mt-lg-0">
-                <a href="login.html" class="btn btn-style btn-primary">Login</a>
-                <a href="register.html" class="btn btn-style btn-primary">Register</a>
+                <a class="btn btn-style btn-primary" id="name" disabled>aaaaaaaaa</a>
+                <a class="btn btn-style btn-primary" id="team" disabled>aaaaaaaaa</a>
+                <a href="index.html" class="btn btn-style btn-primary" onclick="deconect()">Log out</a>
               </div>
               <!--/search-right-->
               <div class="search mx-3">
@@ -120,8 +105,7 @@ Author URL: http://w3layouts.com
         <div class="container py-lg-5 py-md-4 py-2">
             <div class="row">
                 <div class="col-lg-5 pr-lg-0">
-                    <div class="w3l-left-img2" > 
-                      <!-- <img src="assets/images/1200px-Dean_Smith_Center1.jpg" alt=""> -->
+                    <div class="w3l-left-img2">
                     </div>
                 </div>
                 <div class="col-lg-7 pl-lg-0">
@@ -134,20 +118,12 @@ Author URL: http://w3layouts.com
                           
                           <input type="number" class="form-control" placeholder="50" value="50" id="prix" disabled>
                         </div>
-                        <a href="" class="btn btn-style btn-primary" style="margin: auto 150px;">Reserver</a>
+                        <a class="btn btn-style btn-primary" style="margin: auto 150px;" onclick="reservation()">Reserver</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-<!-- stats -->
-
-<!-- //stats -->
- <!-- footers 20 -->
-
-
 <!-- jQuery and Bootstrap JS -->
 <script src="assets/js/jquery-3.3.1.min.js"></script>
 
@@ -300,7 +276,7 @@ Author URL: http://w3layouts.com
 <!-- bootstrap -->
 <script src="assets/js/bootstrap.min.js"></script>
 
-<script src="assets/js/user.js"></script>
+<script src="assets/js/reserv.js"></script>
 <script src="https://kit.fontawesome.com/737ba8872d.js" crossorigin="anonymous"></script>
 
 </body>

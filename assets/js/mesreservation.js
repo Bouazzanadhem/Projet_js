@@ -1,10 +1,15 @@
 function deconect(){
     localStorage.removeItem("UserConnecté");
 }
-var p =localStorage.getItem("matches")||[];
-var z=JSON.parse(p)
+var p =localStorage.getItem("matches");
+var match=JSON.parse(p)
 var user = localStorage.getItem("UserConnecté");
 var usser = JSON.parse(user)
+var q =localStorage.getItem("reservmatch");
+var matchreserved = JSON.parse(q)
+console.log(match);
+console.log(usser);
+console.log(matchreserved);
 var d = new Date();
 var n = d.getDate();
 function addmatch(){
@@ -50,8 +55,8 @@ function addmatch(){
     //                 <div class="blog-info">
     //                 <a href="#category" class="category">${x.salle}</a>
     //                 <h4><a href="#blog-single">${x.team1} VS ${x.team2}</a></h4>
-    //                 <p>Nbre de place : ${x.nbplace} </p>
-    //                 <p>Prix : ${x.prix}$ </p>
+    //                 <p>Nbre de place reservé : ${x.nbplace} </p>
+    //                 <p>Prix Total : ${x.prix}$ </p>
     //                 <p><a  class="btn btn-style btn-primary"  style="margin:auto 50px" onclick="navigate(${x.id})">Reserver</a></p>
     //                 </div>
     //             </div>

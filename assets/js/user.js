@@ -166,13 +166,4 @@ function recherche(){
     document.getElementById("cardmatch").innerHTML= match 
 
 }
-let x = document.getElementById("prix").value;
-function calcul(){
-    let nbre = document.getElementById("ticket").value;
-    let y=x;
-    // console.log(x);
-    // console.log(nbre);
-    let reserv=Number(y)*Number(nbre);
-    console.log(reserv);
-    document.getElementById("prix").value = reserv;
-}
+
