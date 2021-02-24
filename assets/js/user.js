@@ -9,14 +9,19 @@ var d = new Date();
 var j = d.getDate();
 var m =d.getMonth();
 function addmatch(){
-    document.getElementById("name").innerHTML = usser.fname
+    if (usser == null){
+        console.log("non connecté");
+        window.location.replace("login.html")
+    }else{
+        document.getElementById("name").innerHTML = usser.fname
     document.getElementById("team").innerHTML = usser.team
     // console.log(n);
     // console.log(usser.team);
     let match =``;
     z.forEach(x => {
         if (Number(m+1) > Number(x.date[5]+x.date[6])) {
-            match +=`
+            if ((x.team1 == usser.team)||(x.team2 == usser.team)){
+                match +=`
             <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
                 <div class="grids5-info">
                     <span class="posted-date" style="background-color: red;">
@@ -31,10 +36,12 @@ function addmatch(){
                     <div class="blog-info">
                     <a href="#category" class="category">${x.salle}</a>
                     <h4><a href="#blog-single">${x.team1} VS ${x.team2}</a></h4>
-                    <p>Lorem ipsum dolor sit amet ad minus libero ullam ipsam quas earum!</p>
+                    <p>Nbre de place : ${x.nbplace} </p>
+                    <p>Prix : ${x.prix}$ </p>
                     </div>
                 </div>
             </div>`
+        }
         }else if (Number(m+1) == Number(x.date[5]+x.date[6])) {
             if (((x.team1 == usser.team)||(x.team2 == usser.team)) && (j >= Number(x.date[8]+x.date[9]))){
                 match +=`
@@ -52,7 +59,8 @@ function addmatch(){
                     <div class="blog-info">
                     <a href="#category" class="category">${x.salle}</a>
                     <h4><a href="#blog-single">${x.team1} VS ${x.team2}</a></h4>
-                    <p>Lorem ipsum dolor sit amet ad minus libero ullam ipsam quas earum!</p>
+                    <p>Nbre de place : ${x.nbplace} </p>
+                    <p>Prix : ${x.prix}$ </p>
                     </div>
                 </div>
             </div>`
@@ -75,46 +83,48 @@ function addmatch(){
                     <h4><a href="#blog-single">${x.team1} VS ${x.team2}</a></h4>
                     <p>Nbre de place : ${x.nbplace} </p>
                     <p>Prix : ${x.prix}$ </p>
-                    <input id="idmatch" name="idmatch" value=${x.id}>
-                    <p>
-                    <input type="submit" value="Reserver">
-                    <a  class="btn btn-style btn-primary"  style="margin:auto 50px" onclick="navigate(${x.id})">Reserver</a></p>
+                    <input id="idmatch" type="hidden" name="idmatch" value=${x.id}>
+                    <p><input class="btn btn-style btn-primary"  style="margin:auto 50px" type="submit" value="Reserver"></p>
                     </div>
                 </form>    
                 </div>
             </div>`
         }   
         }else if (Number(m+1) < Number(x.date[5]+x.date[6])) {
-            match +=`
-            <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
-                <div class="grids5-info">
-                    <span class="posted-date" style="background-color: green;">
-                        <a>
-                        <span class="small">${x.date[0]+x.date[1]+x.date[2]+x.date[3]}</span>
-                        <span class="big">${x.date[8]+x.date[9]}</span>
-                        <span class="small">${x.date[5]+x.date[6]}</span>
-                        </a>
-                    </span>
-                    <a class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
-                    class="img-fluid news-image" /></a>
-                    <div class="blog-info">
-                    <a href="#category" class="category">${x.salle}</a>
-                    <h4><a href="#blog-single">${x.team1} VS ${x.team2}</a></h4>
-                    <p>Nbre de place : ${x.nbplace} </p>
-                    <p>Prix : ${x.prix}$ </p>
-                    <input id="idmatch" name="idmatch" value=${x.id}>
-                    <p>
-                    <input type="submit" value="Reserver">
-                    <p><a  class="btn btn-style btn-primary"  style="margin:auto 50px" onclick="navigate(${x.id})">Reserver</a></p>
+            if ((x.team1 == usser.team)||(x.team2 == usser.team)) {
+                match +=`
+                <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
+                    <div class="grids5-info">
+                    <form action="/reservation.html" method="get">
+                        <span class="posted-date" style="background-color: green;">
+                            <a>
+                            <span class="small">${x.date[0]+x.date[1]+x.date[2]+x.date[3]}</span>
+                            <span class="big">${x.date[8]+x.date[9]}</span>
+                            <span class="small">${x.date[5]+x.date[6]}</span>
+                            </a>
+                        </span>
+                        <a class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
+                        class="img-fluid news-image" /></a>
+                        <div class="blog-info">
+                        <a href="#category" class="category">${x.salle}</a>
+                        <h4><a href="#blog-single">${x.team1} VS ${x.team2}</a></h4>
+                        <p>Nbre de place : ${x.nbplace} </p>
+                        <p>Prix : ${x.prix}$ </p>
+                        <input id="idmatch" type="hidden" name="idmatch" value=${x.id}>
+                        <p><input class="btn btn-style btn-primary"  style="margin:auto 50px" type="submit" value="Reserver"></p>
+                        </div>
+                    </form>    
                     </div>
-                </div>
-            </div>`
+                </div>`
+            }  
         }
         
         
         
     });
     document.getElementById("cardmatch").innerHTML= match
+    }
+    
 }
 var a;
 function navigate(a){
@@ -169,9 +179,10 @@ function recherche(){
          match+=`<img src="assets/images/tenor.gif" alt="Try Again" style="width: 750px; height: 350px;margin:auto;">`
     }
     else{
-        fill.forEach(x => {
+        fill.forEach(x =>  {
             if (Number(m+1) > Number(x.date[5]+x.date[6])) {
-                match +=`
+                if ((x.team1 == usser.team)||(x.team2 == usser.team)){
+                    match +=`
                 <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
                     <div class="grids5-info">
                         <span class="posted-date" style="background-color: red;">
@@ -186,10 +197,12 @@ function recherche(){
                         <div class="blog-info">
                         <a href="#category" class="category">${x.salle}</a>
                         <h4><a href="#blog-single">${x.team1} VS ${x.team2}</a></h4>
-                        <p>Lorem ipsum dolor sit amet ad minus libero ullam ipsam quas earum!</p>
+                        <p>Nbre de place : ${x.nbplace} </p>
+                        <p>Prix : ${x.prix}$ </p>
                         </div>
                     </div>
                 </div>`
+            }
             }else if (Number(m+1) == Number(x.date[5]+x.date[6])) {
                 if (((x.team1 == usser.team)||(x.team2 == usser.team)) && (j >= Number(x.date[8]+x.date[9]))){
                     match +=`
@@ -207,7 +220,8 @@ function recherche(){
                         <div class="blog-info">
                         <a href="#category" class="category">${x.salle}</a>
                         <h4><a href="#blog-single">${x.team1} VS ${x.team2}</a></h4>
-                        <p>Lorem ipsum dolor sit amet ad minus libero ullam ipsam quas earum!</p>
+                        <p>Nbre de place : ${x.nbplace} </p>
+                        <p>Prix : ${x.prix}$ </p>
                         </div>
                     </div>
                 </div>`
@@ -215,6 +229,7 @@ function recherche(){
                 match +=`
                 <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
                     <div class="grids5-info">
+                    <form action="/reservation.html" method="get">
                         <span class="posted-date" style="background-color: green;">
                             <a>
                             <span class="small">${x.date[0]+x.date[1]+x.date[2]+x.date[3]}</span>
@@ -229,33 +244,40 @@ function recherche(){
                         <h4><a href="#blog-single">${x.team1} VS ${x.team2}</a></h4>
                         <p>Nbre de place : ${x.nbplace} </p>
                         <p>Prix : ${x.prix}$ </p>
-                        <p><a  class="btn btn-style btn-primary"  style="margin:auto 50px" onclick="navigate(${x.id})">Reserver</a></p>
+                        <input id="idmatch" type="hidden" name="idmatch" value=${x.id}>
+                        <p><input class="btn btn-style btn-primary"  style="margin:auto 50px" type="submit" value="Reserver"></p>
                         </div>
+                    </form>    
                     </div>
                 </div>`
             }   
             }else if (Number(m+1) < Number(x.date[5]+x.date[6])) {
-                match +=`
-                <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
-                    <div class="grids5-info">
-                        <span class="posted-date" style="background-color: green;">
-                            <a>
-                            <span class="small">${x.date[0]+x.date[1]+x.date[2]+x.date[3]}</span>
-                            <span class="big">${x.date[8]+x.date[9]}</span>
-                            <span class="small">${x.date[5]+x.date[6]}</span>
-                            </a>
-                        </span>
-                        <a class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
-                        class="img-fluid news-image" /></a>
-                        <div class="blog-info">
-                        <a href="#category" class="category">${x.salle}</a>
-                        <h4><a href="#blog-single">${x.team1} VS ${x.team2}</a></h4>
-                        <p>Nbre de place : ${x.nbplace} </p>
-                        <p>Prix : ${x.prix}$ </p>
-                        <p><a  class="btn btn-style btn-primary"  style="margin:auto 50px" onclick="navigate(${x.id})">Reserver</a></p>
+                if ((x.team1 == usser.team)||(x.team2 == usser.team)) {
+                    match +=`
+                    <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
+                        <div class="grids5-info">
+                        <form action="/reservation.html" method="get">
+                            <span class="posted-date" style="background-color: green;">
+                                <a>
+                                <span class="small">${x.date[0]+x.date[1]+x.date[2]+x.date[3]}</span>
+                                <span class="big">${x.date[8]+x.date[9]}</span>
+                                <span class="small">${x.date[5]+x.date[6]}</span>
+                                </a>
+                            </span>
+                            <a class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
+                            class="img-fluid news-image" /></a>
+                            <div class="blog-info">
+                            <a href="#category" class="category">${x.salle}</a>
+                            <h4><a href="#blog-single">${x.team1} VS ${x.team2}</a></h4>
+                            <p>Nbre de place : ${x.nbplace} </p>
+                            <p>Prix : ${x.prix}$ </p>
+                            <input id="idmatch" type="hidden" name="idmatch" value=${x.id}>
+                            <p><input class="btn btn-style btn-primary"  style="margin:auto 50px" type="submit" value="Reserver"></p>
+                            </div>
+                        </form>    
                         </div>
-                    </div>
-                </div>`
+                    </div>`
+                }  
             }
             
             
