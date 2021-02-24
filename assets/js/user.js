@@ -88,6 +88,9 @@ function addmatch(){
             match +=`
             <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
                 <div class="grids5-info">
+                <form action="/reservation.html" method="get">
+
+                
                     <span class="posted-date" style="background-color: green;">
                         <a>
                         <span class="small">${x.date[0]+x.date[1]+x.date[2]+x.date[3]}</span>
@@ -102,8 +105,12 @@ function addmatch(){
                     <h4><a href="#blog-single">${x.team1} VS ${x.team2}</a></h4>
                     <p>Nbre de place : ${x.nbplace} </p>
                     <p>Prix : ${x.prix}$ </p>
+                    <input id="idmatch" name="idmatch" value=${x.id}>
+                    <p>
+                    <input type="submit" value="Reserver">
                     <p><a  class="btn btn-style btn-primary"  style="margin:auto 50px" onclick="navigate(${x.id})">Reserver</a></p>
                     </div>
+                    </form>    
                 </div>
             </div>`
         }

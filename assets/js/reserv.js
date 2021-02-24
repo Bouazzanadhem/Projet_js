@@ -10,7 +10,7 @@ function deconect(){
     var ID= vars[1];
     var p =localStorage.getItem("matches");
     var matchs=JSON.parse(p)
-function addmatch(){
+function addmatch1(){
     document.getElementById("name").innerHTML = usser.fname
     document.getElementById("team").innerHTML = usser.team    
     console.log("id =",typeof ID);
