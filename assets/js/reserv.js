@@ -1,15 +1,15 @@
 function deconect(){
     localStorage.removeItem("UserConnecté");
 }
-var user = localStorage.getItem("UserConnecté");
-var usser = JSON.parse(user)
-var d = new Date();
-var n = d.getDate();
-var query = window.location.search.substring(1);
-var vars = query.split("=");
-var ID= vars[1];
-var p =localStorage.getItem("matches");
-var matchs=JSON.parse(p)
+    var user = localStorage.getItem("UserConnecté");
+    var usser = JSON.parse(user)
+    var d = new Date();
+    var n = d.getDate();
+    var query = window.location.search.substring(1);
+    var vars = query.split("=");
+    var ID= vars[1];
+    var p =localStorage.getItem("matches");
+    var matchs=JSON.parse(p)
 function addmatch(){
     document.getElementById("name").innerHTML = usser.fname
     document.getElementById("team").innerHTML = usser.team    
@@ -28,25 +28,25 @@ function addmatch(){
         <p class="" id="nbrplace">Nombre de place : ${reserv.nbplace}</p>
         <div class="input-group mb-3">
             <input type="number" class="form-control" placeholder="nbre Ticket" max="6" min="1" oninput="calcul()" id="ticket">                          
-            <input type="number" class="form-control" placeholder="50" value="50" id="prix" disabled>
+            <input type="number" class="form-control" placeholder="${reserv.prix}" value="${reserv.prix}" id="prix" disabled>
         </div>
-        <a class="btn btn-style btn-primary" style="margin: auto 150px;" onclick="reservation()">Reserver</a>
+        <a href="mesreservation.html" class="btn btn-style btn-primary" style="margin: auto 150px;" onclick="reservation()">Reserver</a>
     </div>`
 
     window.open('reservation.html', '_blank');
     document.getElementById("reservmatch").innerHTML= reservation
-
+return document.getElementById("prix").value;
 }
-let x = document.getElementById("prix").value;
-
+    var prixsingle = addmatch()
+    console.log(prixsingle);
 function calcul(){
     let nbre = document.getElementById("ticket").value;
-    let y=x;
+    let y=prixsingle;
     // console.log(x);
     // console.log(nbre);
-    let reserv=Number(y)*Number(nbre);
+    let prixtotal=Number(y)*Number(nbre);
     // console.log(reserv);
-    document.getElementById("prix").value = reserv;
+    document.getElementById("prix").value = prixtotal;
 }
 
 function reservation(){
@@ -60,4 +60,4 @@ function reservation(){
     let reservmatch={idmatch:ID,iduser:usser.id,reservnbre:nbre,reservprix:reserv,etat:"false"}
     z.push(reservmatch);
     localStorage.setItem("reservmatch",JSON.stringify(z));
-}
+}   
