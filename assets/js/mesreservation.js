@@ -37,7 +37,8 @@ function addmatch(){
                         <div class="blog-info">
                         <a href="#category" class="category">${y.salle}</a>
                         <h4><a href="#blog-single">${y.team1} VS ${y.team2}</a></h4>
-                        <p>Lorem ipsum dolor sit amet ad minus libero ullam ipsam quas earum!</p>
+                        <p>Nbre de place reservé : ${x.reservnbre} </p>
+                        <p>Prix Total : ${x.reservprix}$ </p>
                         </div>
                     </div>
                 </div>`
@@ -59,7 +60,8 @@ function addmatch(){
                         <div class="blog-info">
                         <a href="#category" class="category">${y.salle}</a>
                         <h4><a href="#blog-single">${y.team1} VS ${y.team2}</a></h4>
-                        <p>Lorem ipsum dolor sit amet ad minus libero ullam ipsam quas earum!</p>
+                        <p>Nbre de place reservé : ${x.reservnbre} </p>
+                        <p>Prix Total : ${x.reservprix}$ </p>
                         </div>
                     </div>
                 </div>`
@@ -122,7 +124,7 @@ function addmatch(){
 function recherche(){
     let search = document.getElementById("exampleFormControlInput1").value;
     // console.log(search);
-    let fill = z.filter(x => ((x.team1).startsWith(search)) || ((x.team2).startsWith(search)));
+    let fill = z.filter(x =>  (((x.team1).startsWith(search))||((x.team2).startsWith(search))));
     // console.log( fill);
 
     let match=``;

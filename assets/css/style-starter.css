@@ -11164,7 +11164,7 @@ a.title-small {
 
 .w3l-right-info {
   background: var(--bg-color);
-  padding: 80px 60px;
+  padding: 30px 30px;
   border-top-right-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
   box-shadow: 0px 9px 24px 5px rgba(0, 0, 0, 0.04); }
