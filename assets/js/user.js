@@ -102,6 +102,9 @@ function addmatch(){
                     <h4><a href="#blog-single">${x.team1} VS ${x.team2}</a></h4>
                     <p>Nbre de place : ${x.nbplace} </p>
                     <p>Prix : ${x.prix}$ </p>
+                    <input id="idmatch" name="idmatch" value=${x.id}>
+                    <p>
+                    <input type="submit" value="Reserver">
                     <p><a  class="btn btn-style btn-primary"  style="margin:auto 50px" onclick="navigate(${x.id})">Reserver</a></p>
                     </div>
                 </div>
