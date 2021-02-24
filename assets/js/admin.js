@@ -1,3 +1,8 @@
+function logOut() {
+    
+  localStorage.removeItem("UserConnecté");
+
+}
 var p =localStorage.getItem("matches")||[];
 var z=JSON.parse(p)
 function addmatch(){
@@ -15,7 +20,7 @@ function addmatch(){
                         <span class="small">${x.date[5]+x.date[6]}</span>
                         </a>
                     </span>
-                    <a href="reservation.html" class="d-block zoom"><img src="${x.img} " alt=""
+                    <a href="reservation.html" class="d-block zoom"><img src="assets/images/1200px-Dean_Smith_Center1.jpg" alt=""
                     class="img-fluid news-image" /></a>
                     <div class="blog-info">
                     <h3> <a href="#category" class="fas fa-basketball-ball">  NBA World Cup</a></h3>
@@ -181,7 +186,7 @@ function update(b) {
   document.getElementById("inputState1").value =update.team1;
   document.getElementById("inputState2").value =update.team2;
   document.getElementById("inputState3").value=update.salle;
-  document.getElementById("formFile").value=update.image;
+  // document.getElementById("formFile").value=update.img;
   document.getElementById("seats").value=update.nbplace;
   document.getElementById("price").value=update.prix;
  document.getElementById("date").value=update.date;
@@ -210,13 +215,18 @@ function save() {
 
 function Search(){
   let search = document.getElementById("search-input").value;
-    console.log(search);
+    // console.log(search);
   let fill = z.filter(x =>  (x.team1).startsWith(search[0].toUpperCase())||((x.team2).startsWith(search[0].toUpperCase())));
-    console.log(search.toUpperCase());
-    console.log(fill);
+    // console.log(search.toUpperCase());
+    // console.log(fill);
 let match=``;
+if(fill.length==0){
+  match+=`<img src="assets/images/kobe-bryant-icegif-1.gif" alt="Try Again"style="width: 500px; height: 500px;margin:auto;">`
+}
+
+else{
     fill.forEach((x,index) => {
- //     console.log(index);
+     console.log(index);
       match +=`
           <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
               <div class="grids5-info">
@@ -364,7 +374,8 @@ let match=``;
 
 
   });
+}
   document.getElementById("cardmatch").innerHTML= match;
-
+ 
 
 }
