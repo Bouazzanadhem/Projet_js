@@ -60,6 +60,7 @@ function addmatch(){
             match +=`
             <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
                 <div class="grids5-info">
+                <form action="/reservation.html" method="get">
                     <span class="posted-date" style="background-color: green;">
                         <a>
                         <span class="small">${x.date[0]+x.date[1]+x.date[2]+x.date[3]}</span>
@@ -74,8 +75,12 @@ function addmatch(){
                     <h4><a href="#blog-single">${x.team1} VS ${x.team2}</a></h4>
                     <p>Nbre de place : ${x.nbplace} </p>
                     <p>Prix : ${x.prix}$ </p>
-                    <p><a  class="btn btn-style btn-primary"  style="margin:auto 50px" onclick="navigate(${x.id})">Reserver</a></p>
+                    <input id="idmatch" name="idmatch" value=${x.id}>
+                    <p>
+                    <input type="submit" value="Reserver">
+                    <a  class="btn btn-style btn-primary"  style="margin:auto 50px" onclick="navigate(${x.id})">Reserver</a></p>
                     </div>
+                </form>    
                 </div>
             </div>`
         }   
@@ -110,14 +115,12 @@ function addmatch(){
 }
 var a;
 function navigate(a){
+    
     //  id1 = a;
     // setTimeout(() => console.log("id"+id1),3000)
     
     // alert(ID);
-    // let reserv=z.find(x=>x.id == a);
-    // document.getElementById("match").value= reserv.team1 + "VS" + reserv.team2;
-    // document.getElementById("arena").value=reserv.salle;
-    // document.getElementById("date").value=reserv.date;
+    
      window.open(`reservation.html`)
     // console.log(reserv);
 //     let reservation=`<div class="col-lg-7 pl-lg-0">
@@ -155,7 +158,7 @@ function reservation(){
 function recherche(){
     let search = document.getElementById("exampleFormControlInput1").value;
     // console.log(search);
-    let fill = z.filter(x =>  (x.team1).startsWith(search[0].toUpperCase())||((x.team2).startsWith(search[0].toUpperCase())));
+    let fill = z.filter(x =>  (((x.team1).startsWith(search))||((x.team2).startsWith(search))));
     // console.log( fill);
 
     let match=``;
