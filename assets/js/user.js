@@ -14,11 +14,9 @@ function addmatch(){
         window.location.replace("login.html")
     }else{
         document.getElementById("name").innerHTML = usser.fname
-    document.getElementById("team").innerHTML = usser.team
-    // console.log(n);
-    // console.log(usser.team);
-    let match =``;
-    z.forEach(x => {
+        document.getElementById("team").innerHTML = usser.team
+        let match =``;
+        z.forEach(x => {
         if (Number(m+1) > Number(x.date[5]+x.date[6])) {
             if ((x.team1 == usser.team)||(x.team2 == usser.team)){
                 match +=`
@@ -117,14 +115,10 @@ function addmatch(){
                     </div>
                 </div>`
             }  
-        }
-        
-        
-        
+        }   
     });
     document.getElementById("cardmatch").innerHTML= match
-    }
-    
+    }  
 }
 var a;
 function navigate(a){
@@ -157,7 +151,6 @@ function navigate(a){
 //     document.getElementById("reservmatch").innerHTML= reservation
 return a;
 }
-
 var id = navigate(a);
 
 function reservation(){
