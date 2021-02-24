@@ -20,7 +20,7 @@ function addmatch(){
                         <span class="small">${x.date[5]+x.date[6]}</span>
                         </a>
                     </span>
-                    <a href="reservation.html" class="d-block zoom"><img src="${x.img[0]}" alt=""
+                    <a href="reservation.html" class="d-block zoom"><img src="assets/images/1200px-Dean_Smith_Center1.jpg" alt=""
                     class="img-fluid news-image" /></a>
                     <div class="blog-info">
                     <h3> <a href="#category" class="fas fa-basketball-ball">  NBA World Cup</a></h3>
@@ -186,7 +186,7 @@ function update(b) {
   document.getElementById("inputState1").value =update.team1;
   document.getElementById("inputState2").value =update.team2;
   document.getElementById("inputState3").value=update.salle;
-  document.getElementById("formFile").value=update.img;
+  // document.getElementById("formFile").value=update.img;
   document.getElementById("seats").value=update.nbplace;
   document.getElementById("price").value=update.prix;
  document.getElementById("date").value=update.date;
