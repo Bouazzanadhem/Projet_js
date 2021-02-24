@@ -11734,11 +11734,10 @@ button.owl-next {
 
 .breadcrumb-bg-about {
   background-size: cover;
-  background-image: linear-gradient(to right, rgba(25, 25, 25, 0.7), rgba(0, 0, 0, 0.7));
+  background-image: linear-gradient(to right, rgba(25, 25, 25, 0.7), rgba(0, 0, 0, 0.7)), url(../images/trophy.jpg);
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: center;
   background-attachment: fixed; }
-  /* , url(../images/banner.jpg) */
 h2.title {
   color: #fff;
   font-size: 50px;

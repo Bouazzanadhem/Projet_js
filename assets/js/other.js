@@ -8,10 +8,11 @@ var usser = JSON.parse(user)
 var d = new Date();
 var n = d.getDate();
 function addmatch(){
-    document.getElementById("name").innerHTML = usser.fname
+    if (usser == null) {
+        window.location.replace("login.html")
+    }else{
+        document.getElementById("name").innerHTML = usser.fname
     document.getElementById("team").innerHTML = usser.team
-    // console.log(n);
-    // console.log(usser.team);
     let match =``;
     z.forEach(x => {
         if (((x.team1 != usser.team)&&(x.team2 != usser.team)) && (n >= Number(x.date[8]+x.date[9]))){
@@ -61,6 +62,8 @@ function addmatch(){
         
     });
     document.getElementById("cardmatch").innerHTML= match
+    }
+    
 }
 function recherche(){
     let search = document.getElementById("exampleFormControlInput1").value;

@@ -14,7 +14,10 @@ var d = new Date();
 var j = d.getDate();
 var m = d.getMonth();
 function addmatch(){
-    document.getElementById("name").innerHTML = usser.fname
+    if (usser == null) {
+        window.location.replace("login.html")
+    }else{
+        document.getElementById("name").innerHTML = usser.fname
     document.getElementById("team").innerHTML = usser.team
     console.log(usser.team);
     let match =``;
@@ -120,6 +123,8 @@ function addmatch(){
         
     });
     document.getElementById("cardmatch").innerHTML= match
+    }
+    
 }
 function recherche(){
     let search = document.getElementById("exampleFormControlInput1").value;
