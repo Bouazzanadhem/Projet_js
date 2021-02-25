@@ -30,7 +30,25 @@ function addmatch(){
             <input type="number" class="form-control" placeholder="nbre Ticket" max="6" min="1" oninput="calcul()" id="ticket">                          
             <input type="number" class="form-control" placeholder="${reserv.prix}" value="${reserv.prix}" id="prix" disabled>
         </div>
-        <a href="mesreservation.html" class="btn btn-style btn-primary" style="margin: auto 150px;" onclick="reservation()">Reserver</a>
+        <a href="/mesreservation.html" class="btn btn-style btn-primary" style="margin: auto 150px;" onclick="reservation()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Reserver</a>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Reservation</h5>
+        <div class="spinner-border text-warning" role="status">
+  <span class="visually-hidden"></span>
+</div>
+      </div>
+      <div class="modal-body">
+      <h2>Veuillez attendre  l'acceptation de l'admin</h2>
+      </div>
+      <div class="modal-footer">
+        <button type="button" onclick="redirect()" class="btn btn-primary">D'accord</button>
+      </div>
+    </div>
+  </div>
+</div>
     </div>`
 
     window.open('reservation.html', '_blank');
@@ -61,4 +79,9 @@ function reservation(){
     let reservmatch={idreserv:c,idmatch:ID,iduser:usser.id,reservnbre:nbre,reservprix:reserv,etat:"false"}
     z.push(reservmatch);
     localStorage.setItem("reservmatch",JSON.stringify(z));
-}   
+   
+}  
+
+function redirect() {
+    window.location.replace("mesreservation.html");
+}
