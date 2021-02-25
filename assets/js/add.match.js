@@ -37,7 +37,7 @@ function AddMatch(){
     localStorage.setItem("matches",JSON.stringify(z));
     listimage=[];
     console.log(g);
-    window.open("http://127.0.0.1:5500/Projet_js/admin.html")
+    window.open("http://127.0.0.1:5500/admin.html")
 }
 function logOut() {
     

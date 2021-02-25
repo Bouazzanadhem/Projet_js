@@ -38,12 +38,12 @@ function Reservedmatch(){
                
                 
                    
-                  <button type="button"   onclick="" style="margin-top:30px"  data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"class="btn btn-style btn-success"  >Accept Match </button>
+                  <button type="button"   onclick="ConfirmMatch(${j.idreserv})" style="margin-top:30px"  data-bs-toggle="modal" data-bs-target="#exampleModal" href="#"class="btn btn-style btn-success"  >Accept Match </button>
                 
-                
+                  </div>
+                  </div>
                 </div>
-                </div>
-             </div> `
+        </div> `
         })
 
      
@@ -54,7 +54,26 @@ function Reservedmatch(){
     document.getElementById("cardmatch").innerHTML= matche
 }
 
-function ConfirmMatch() {
+function ConfirmMatch(a) {
+
+    
+    let  reservmatch= z.find(x => x.idreserv==a)
+    let matchreserve=match.find(x => x.id==reservmatch.idmatch)
+    let nbsallematch=matchreserve.nbplace;
+    let nbplacesReserve =reservmatch.reservnbre;
+    let newNbPlaces= Number(nbsallematch)-Number(nbplacesReserve)
+    console.log(newNbPlaces);
+   // console.log(reservmatch.reservnbre);
+   matchreserve.nbplace=newNbPlaces.toString();
+    reservmatch.etat=true;
+    // console.log(matchreserve);
+    z.splice(a-1,1);
+    match.splice(matchreserve.id-1,1)
+//console.log(a);
+localStorage.setItem("reservmatch",JSON.stringify(z))
+localStorage.setItem("matches",JSON.stringify(match))
+
+// window.location.reload()
 
   
 
