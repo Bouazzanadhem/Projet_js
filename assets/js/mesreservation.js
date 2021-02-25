@@ -90,7 +90,7 @@ function addmatch(){
                             <h4><a href="#blog-single">${y.team1} VS ${y.team2}</a></h4>
                             <p>Nbre de place reservé : ${x.reservnbre} </p>
                             <p>Prix Total : ${x.reservprix}$ </p>
-                            <p><a  class="btn btn-style btn-info "  style="margin:auto 50px" onclick="navigate(${y.id})"><i class="fas fa-print"></i> Imprimer</a></p>
+                            <p><a class="btn btn-style btn-info" style="margin:auto 50px" onclick="imprimer('sectionAimprimer',${x.idreserv})"><i class="fas fa-print"></i> Imprimer</a></p>
                             </div>
                         </div>
                     </div>`
@@ -116,7 +116,7 @@ function addmatch(){
                             <h4><a href="#blog-single">${y.team1} VS ${y.team2}</a></h4>
                             <p>Nbre de place reservé : ${y.nbplace} </p>
                             <p>Prix Total : ${y.prix}$ </p>
-                            <p><a  class="btn btn-style btn-primary"  style="margin:auto 50px" onclick="navigate(${y.id})">Reserver</a></p>
+                            <p><a  class="btn btn-style btn-primary"  style="margin:auto 50px" onclick="imprimer('sectionAimprimer')">Reserver</a></p>
                             </div>
                         </div>
                     </div>`   
@@ -187,5 +187,35 @@ function recherche(){
 });
     }
     document.getElementById("cardmatch").innerHTML= match 
+
+}
+
+function imprimer(divName,a){
+    console.log(divName);
+    console.log(a);
+    let printContents = ``;
+    matchreserved.forEach(x => {
+        if (x.idreserv == a) {
+            matchs.forEach(y => {
+                if (x.idmatch == y.id) {
+                 printContents +=`
+                 <div class="w3l-right-info" style="margin-top: 50px;">
+                 <h3 class="title-big" id="match" style="color:red;">${y.team1} VS ${y.team2}</h3>
+                 <h5 class="" id="arena">${y.salle}</h5>
+                 <p class="" id="date">${y.date}</p>
+                 <strong>Nom du client : </strong><span>${usser.fname} ${usser.lname}</span>
+                 <h3 class="" id="nbrplace">Nombre de place Réservé : ${x.reservnbre}</h3>
+                 <h3 class="" id="prixx">Prix Total : ${x.reservprix}</h3>
+                 <p class=""></p>
+                </div>`   
+                }
+            });
+        }
+    });
+    document.getElementById(divName).innerHTML = printContents
+    var originalContents = document.innerHTML;      
+    document.body.innerHTML = printContents;     
+    window.print();     
+    document.innerHTML = originalContents;
 
 }
