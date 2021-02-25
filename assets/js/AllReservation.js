@@ -17,15 +17,19 @@ function Reservedmatch(){
                 <div class="grids5-info">
                     <span class="posted-date">
                         <a href="#blog-single">
-                       
+                        <span class="small">${x.date[0]+x.date[1]+x.date[2]+x.date[3]}</span>
+                        <span class="big">${x.date[8]+x.date[9]}</span>
+                        <span class="small">${x.date[5]+x.date[6]}</span>
                         </a>
                     </span>
+                    <div class="rentext-listing-category"><span style="background-color: red;">Done</span></div>
+
                     <a href="reservation.html" class="d-block zoom"><img src="assets/images/1200px-Dean_Smith_Center1.jpg" alt=""
                     class="img-fluid news-image" /></a>
                     <div class="blog-info">
-                    <h3> <a href="#category" class="fas fa-basketball-ball"> </a></h3>
-                    <h4><a href="#blog-single">${x.team1} VS ${x.team2}</a></h4>
-                    
+                    <h3> <a href="#category" class="fas fa-basketball-ball"> NBA World Cup</a></h3>
+                    <h4><a href="#blog-single">  ${x.team1} VS ${x.team2}</a></h4>
+                    <h5 class="" id="arena"> Salle:  ${x.salle}</h5>
                     <p>Reamining Seats : ${x.nbplace}</p>
                     <p> Price: ${j.reservprix} </p>
                     <p> Reserve number: ${j.reservnbre} </p>
@@ -39,7 +43,7 @@ function Reservedmatch(){
                 
                 </div>
                 </div>
-</div> `
+             </div> `
         })
 
      
@@ -48,4 +52,11 @@ function Reservedmatch(){
 
     });
     document.getElementById("cardmatch").innerHTML= matche
+}
+
+function ConfirmMatch() {
+
+  
+
+    
 }
