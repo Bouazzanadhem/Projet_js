@@ -10,7 +10,7 @@ function deconect(){
     var ID= vars[1];
     var p =localStorage.getItem("matches");
     var matchs=JSON.parse(p)
-function addmatch1(){
+function addmatch(){
     document.getElementById("name").innerHTML = usser.fname
     document.getElementById("team").innerHTML = usser.team    
     console.log("id =",typeof ID);
@@ -35,7 +35,7 @@ function addmatch1(){
 
     window.open('reservation.html', '_blank');
     document.getElementById("reservmatch").innerHTML= reservation
-return document.getElementById("prix").value;
+    return document.getElementById("prix").value;
 }
     var prixsingle = addmatch()
     console.log(prixsingle);
@@ -51,13 +51,13 @@ function calcul(){
 
 function reservation(){
     let p =localStorage.getItem("reservmatch")||[];
-    // let z=JSON.parse(p)
+    let z=JSON.parse(p)
     let reserv= document.getElementById("prix").value;
     let nbre = document.getElementById("ticket").value;
     console.log(usser.id);
     console.log(reserv);
     console.log(nbre);
     let reservmatch={idmatch:ID,iduser:usser.id,reservnbre:nbre,reservprix:reserv,etat:"false"}
-    p.push(reservmatch);
-    localStorage.setItem("reservmatch",JSON.stringify(p));
+    z.push(reservmatch);
+    localStorage.setItem("reservmatch",JSON.stringify(z));
 }   

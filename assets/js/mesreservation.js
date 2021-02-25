@@ -22,105 +22,108 @@ function addmatch(){
     console.log(usser.team);
     let match =``;
     matchreserved.forEach(x => {
-        matchs.forEach(y => {
-            if (Number(m+1) > Number(y.date[5]+y.date[6])){
-                match +=`
-                <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
-                    <div class="grids5-info">
-                        <span class="posted-date" style="background-color: red;">
-                            <a >
-                            <span class="small">${y.date[0]+y.date[1]+y.date[2]+y.date[3]}</span>
-                            <span class="big">${y.date[8]+y.date[9]}</span>
-                            <span class="small">${y.date[5]+y.date[6]}</span>
-                            </a>
-                        </span>
-                        <div class="rentext-listing-category"><span style="background-color: red;">Done</span></div>
-                        <a  class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
-                        class="img-fluid news-image" /></a>
-                        <div class="blog-info">
-                        <a href="#category" class="category">${y.salle}</a>
-                        <h4><a href="#blog-single">${y.team1} VS ${y.team2}</a></h4>
-                        <p>Nbre de place reservé : ${x.reservnbre} </p>
-                        <p>Prix Total : ${x.reservprix}$ </p>
+        if (x.iduser == usser.id) {
+            matchs.forEach(y => {
+                if (Number(m+1) > Number(y.date[5]+y.date[6])){
+                    if (x.idmatch == y.id) {
+                        match +=`
+                    <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
+                        <div class="grids5-info">
+                            <span class="posted-date" style="background-color: red;">
+                                <a >
+                                <span class="small">${y.date[0]+y.date[1]+y.date[2]+y.date[3]}</span>
+                                <span class="big">${y.date[8]+y.date[9]}</span>
+                                <span class="small">${y.date[5]+y.date[6]}</span>
+                                </a>
+                            </span>
+                            <div class="rentext-listing-category"><span style="background-color: red;">Done</span></div>
+                            <a  class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
+                            class="img-fluid news-image" /></a>
+                            <div class="blog-info">
+                            <a href="#category" class="category">${y.salle}</a>
+                            <h4><a href="#blog-single">${y.team1} VS ${y.team2}</a></h4>
+                            <p>Nbre de place reservé : ${x.reservnbre} </p>
+                            <p>Prix Total : ${x.reservprix}$ </p>
+                            </div>
                         </div>
-                    </div>
-                </div>`
-            }else if (Number(m+1) == Number(y.date[5]+y.date[6])) {
-                if ((x.idmatch == y.id) && (j >= Number(y.date[8]+y.date[9]))){
+                    </div>`   
+                    }
+                }else if (Number(m+1) == Number(y.date[5]+y.date[6])) {
+                    if ((x.idmatch == y.id) && (j >= Number(y.date[8]+y.date[9]))){
+                        match +=`
+                    <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
+                        <div class="grids5-info">
+                            <span class="posted-date" style="background-color: red;">
+                                <a >
+                                <span class="small">${y.date[0]+y.date[1]+y.date[2]+y.date[3]}</span>
+                                <span class="big">${y.date[8]+y.date[9]}</span>
+                                <span class="small">${y.date[5]+y.date[6]}</span>
+                                </a>
+                            </span>
+                            <div class="rentext-listing-category"><span style="background-color: red;">Done</span></div>
+                            <a  class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
+                            class="img-fluid news-image" /></a>
+                            <div class="blog-info">
+                            <a href="#category" class="category">${y.salle}</a>
+                            <h4><a href="#blog-single">${y.team1} VS ${y.team2}</a></h4>
+                            <p>Nbre de place reservé : ${x.reservnbre} </p>
+                            <p>Prix Total : ${x.reservprix}$ </p>
+                            </div>
+                        </div>
+                    </div>`
+                }else if ((x.idmatch == y.id) && (j < Number(y.date[8]+y.date[9]))) {
                     match +=`
-                <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
-                    <div class="grids5-info">
-                        <span class="posted-date" style="background-color: red;">
-                            <a >
-                            <span class="small">${y.date[0]+y.date[1]+y.date[2]+y.date[3]}</span>
-                            <span class="big">${y.date[8]+y.date[9]}</span>
-                            <span class="small">${y.date[5]+y.date[6]}</span>
-                            </a>
-                        </span>
-                        <div class="rentext-listing-category"><span style="background-color: red;">Done</span></div>
-                        <a  class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
-                        class="img-fluid news-image" /></a>
-                        <div class="blog-info">
-                        <a href="#category" class="category">${y.salle}</a>
-                        <h4><a href="#blog-single">${y.team1} VS ${y.team2}</a></h4>
-                        <p>Nbre de place reservé : ${x.reservnbre} </p>
-                        <p>Prix Total : ${x.reservprix}$ </p>
+                    <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
+                        <div class="grids5-info">
+                            <span class="posted-date" style="background-color: green;">
+                                <a>
+                                <span class="small">${y.date[0]+y.date[1]+y.date[2]+y.date[3]}</span>
+                                <span class="big">${y.date[8]+y.date[9]}</span>
+                                <span class="small">${y.date[5]+y.date[6]}</span>
+                                </a>
+                            </span>
+                            <div class="rentext-listing-category"><span style="background-color: red;">Done</span></div>
+                            <a class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
+                            class="img-fluid news-image" /></a>
+                            <div class="blog-info">
+                            <a href="#category" class="category">${y.salle}</a>
+                            <h4><a href="#blog-single">${y.team1} VS ${y.team2}</a></h4>
+                            <p>Nbre de place reservé : ${x.reservnbre} </p>
+                            <p>Prix Total : ${x.reservprix}$ </p>
+                            <p><a  class="btn btn-style btn-info "  style="margin:auto 50px" onclick="navigate(${y.id})"><i class="fas fa-print"></i> Imprimer</a></p>
+                            </div>
                         </div>
-                    </div>
-                </div>`
-            }else if ((x.idmatch == y.id) && (j < Number(y.date[8]+y.date[9]))) {
-                match +=`
-                <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
-                    <div class="grids5-info">
-                        <span class="posted-date" style="background-color: green;">
-                            <a>
-                            <span class="small">${y.date[0]+y.date[1]+y.date[2]+y.date[3]}</span>
-                            <span class="big">${y.date[8]+y.date[9]}</span>
-                            <span class="small">${y.date[5]+y.date[6]}</span>
-                            </a>
-                        </span>
-                        <div class="rentext-listing-category"><span style="background-color: red;">Done</span></div>
-                        <a class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
-                        class="img-fluid news-image" /></a>
-                        <div class="blog-info">
-                        <a href="#category" class="category">${y.salle}</a>
-                        <h4><a href="#blog-single">${y.team1} VS ${y.team2}</a></h4>
-                        <p>Nbre de place reservé : ${x.reservnbre} </p>
-                        <p>Prix Total : ${x.reservprix}$ </p>
-                        <p><a  class="btn btn-style btn-primary"  style="margin:auto 50px" onclick="navigate(${y.id})">Reserver</a></p>
+                    </div>`
+                }
+                
+                }else if (Number(m+1) < Number(y.date[5]+y.date[6])) {
+                    if (x.idmatch == y.id) {
+                        match +=`
+                    <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
+                        <div class="grids5-info">
+                            <span class="posted-date" style="background-color: green;">
+                                <a>
+                                <span class="small">${y.date[0]+y.date[1]+y.date[2]+y.date[3]}</span>
+                                <span class="big">${y.date[8]+y.date[9]}</span>
+                                <span class="small">${y.date[5]+y.date[6]}</span>
+                                </a>
+                            </span>
+                            <div class="rentext-listing-category"><span style="background-color: red;" >Done</span></div>
+                            <a class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
+                            class="img-fluid news-image" /></a>
+                            <div class="blog-info">
+                            <a href="#category" class="category">${y.salle}</a>
+                            <h4><a href="#blog-single">${y.team1} VS ${y.team2}</a></h4>
+                            <p>Nbre de place reservé : ${y.nbplace} </p>
+                            <p>Prix Total : ${y.prix}$ </p>
+                            <p><a  class="btn btn-style btn-primary"  style="margin:auto 50px" onclick="navigate(${y.id})">Reserver</a></p>
+                            </div>
                         </div>
-                    </div>
-                </div>`
-            }
-            
-            }else if (Number(m+1) < Number(y.date[5]+y.date[6])) {
-                match +=`
-                <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
-                    <div class="grids5-info">
-                        <span class="posted-date" style="background-color: green;">
-                            <a>
-                            <span class="small">${y.date[0]+y.date[1]+y.date[2]+y.date[3]}</span>
-                            <span class="big">${y.date[8]+y.date[9]}</span>
-                            <span class="small">${y.date[5]+y.date[6]}</span>
-                            </a>
-                        </span>
-                        <div class="rentext-listing-category"><span style="background-color: red;" >Done</span></div>
-                        <a class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
-                        class="img-fluid news-image" /></a>
-                        <div class="blog-info">
-                        <a href="#category" class="category">${y.salle}</a>
-                        <h4><a href="#blog-single">${y.team1} VS ${y.team2}</a></h4>
-                        <p>Nbre de place reservé : ${y.nbplace} </p>
-                        <p>Prix Total : ${y.prix}$ </p>
-                        <p><a  class="btn btn-style btn-primary"  style="margin:auto 50px" onclick="navigate(${y.id})">Reserver</a></p>
-                        </div>
-                    </div>
-                </div>`
-            }    
-        });
-        
-        
-        
+                    </div>`   
+                    }
+                }    
+            });   
+        }
     });
     document.getElementById("cardmatch").innerHTML= match
     }
