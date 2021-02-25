@@ -50,6 +50,7 @@ function calcul(){
 }
 
 function reservation(){
+    let c = Math.floor(Math.random()*100);
     let p =localStorage.getItem("reservmatch")||[];
     let z=JSON.parse(p)
     let reserv= document.getElementById("prix").value;
@@ -57,7 +58,7 @@ function reservation(){
     console.log(usser.id);
     console.log(reserv);
     console.log(nbre);
-    let reservmatch={idmatch:ID,iduser:usser.id,reservnbre:nbre,reservprix:reserv,etat:"false"}
+    let reservmatch={idreserv:c,idmatch:ID,iduser:usser.id,reservnbre:nbre,reservprix:reserv,etat:"false"}
     z.push(reservmatch);
     localStorage.setItem("reservmatch",JSON.stringify(z));
 }   
