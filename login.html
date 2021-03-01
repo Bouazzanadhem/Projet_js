@@ -96,7 +96,8 @@ Author URL: http://w3layouts.com
                     <input  type="password" name="w3lSender" id="w3lSender" placeholder="Password" required="">
                   </div>
                 </div>
-                <input onclick="login()" class=" btn btn-primary btn-style mt-3" value="Login">
+                <input onclick="login()" class=" btn btn-primary btn-style mt-3" value="Login" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        
                 <p style ="padding-top: 30px" class="text-center dont-do text-secondary">Don't have an account?
                   <a href="register.html" class="text-theme-2 font-weight-bold">Register Now</a>
                 </p>
@@ -109,8 +110,69 @@ Author URL: http://w3layouts.com
   </div>
 </section>
 <!--Login-->
- <!-- footers 20 -->
- 
+<script>
+  function login() {
+    let q =localStorage.getItem("reservmatch")||[];
+    let matchreserved=JSON.parse(q)
+    let z =localStorage.getItem("users");
+    let p =JSON.parse(z);
+    let email=document.getElementById("w3lName").value
+    let password=document.getElementById("w3lSender").value
+    let  loginn  =p.find(x => x.email==email && x.mdp==password);
+    localStorage.setItem("UserConnecté",JSON.stringify(loginn));
+    console.log(loginn);
+    matchreserved.forEach(x => {
+      // console.log(x);
+      // console.log(x.etat);
+      if ((x.etat == false)&&(loginn.role == "admin")){
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Reservation</h5>
+                <div class="spinner-border text-warning" role="status">
+                  <span class="visually-hidden"></span>
+                </div>
+              </div>
+              <div class="modal-body">
+                <h2>Vous Avez une reservation a acceptée</h2>
+              </div>
+              <div class="modal-footer">
+                <button type="button" onclick="redirect()" class="btn btn-primary">D'accord</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    } else if ((x.etat == true)&&(x.iduser == loginn.id)&&(loginn.role == "user")) {
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Reservation</h5>
+                    <div class="spinner-border text-warning" role="status">
+                    <span class="visually-hidden"></span>
+                    </div>
+                  </div>
+                <div class="modal-body">
+                <h2>Votre réservation a été confirmé</h2>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" onclick="redirect()" class="btn btn-primary">D'accord</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    }else{
+      if (loginn.role == "admin"){
+        window.location.replace("admin.html")
+        
+      }else {
+      window.location.replace("user.html")  
+      }
+    }
+    });
+}
+</script>
 
 <!-- jQuery and Bootstrap JS -->
 <script src="assets/js/jquery-3.3.1.min.js"></script>
@@ -266,6 +328,8 @@ Author URL: http://w3layouts.com
  <!-- login -->
  <script src="assets/js/login.js"></script>
  <script src="https://kit.fontawesome.com/737ba8872d.js" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
