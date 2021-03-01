@@ -1,3 +1,9 @@
+function logOut() {
+    
+    localStorage.removeItem("UserConnecté");
+  
+}
+
 var p =localStorage.getItem("matches")||[];
 var z=JSON.parse(p)
 var img = "";
@@ -24,6 +30,7 @@ function AddMatch(){
     
     let a = document.getElementById("inputState1").value;
     let b = document.getElementById("inputState2").value;
+
     let c= document.getElementById("inputState3").value;
 
 
@@ -38,10 +45,5 @@ function AddMatch(){
     listimage=[];
     console.log(g);
     window.location.replace("admin.html")
-}
-function logOut() {
-    
-    localStorage.removeItem("UserConnecté");
-  
 }
 

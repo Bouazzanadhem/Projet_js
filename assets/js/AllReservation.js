@@ -58,8 +58,9 @@ var j;
          <div class="modal-content">
            <div class="modal-header">
              <h5 class="modal-title" id="exampleModalLabel"><a href="#category" ></a></h5>
-             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-           </div>
+             <div class="spinner-border text-warning" role="status">
+             <span class="sr-only"></span>
+           </div>           </div>
            <div class="modal-body">
            <h5> <a href="#category" > Match accepted by Admin </a></h5>
            </div>
