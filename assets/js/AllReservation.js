@@ -165,25 +165,25 @@ function ConfirmMatch(a) {
   console.log("id id id :::::::: " + a);
 
     
-//     let  reservmatch= z.find(x => x.idreserv==a)
-//     let matchreserve=match.find(x => x.id==reservmatch.idmatch)
-//     console.log(reservmatch.idmatch);
-//     let nbsallematch=matchreserve.nbplace;
-//     let nbplacesReserve =reservmatch.reservnbre;
-//     let newNbPlaces= Number(nbsallematch)-Number(nbplacesReserve)
-//     console.log(newNbPlaces);
-//     console.log(a);
-//    // console.log(reservmatch.reservnbre);
-//    matchreserve.nbplace=newNbPlaces.toString();
-//     reservmatch.etat=true;
-//     // console.log(matchreserve);
-//     z.splice(a-1,1);
-//     match.splice(matchreserve.id-1,1)
-// console.log(matchreserve.id);
-// localStorage.setItem("reservmatch",JSON.stringify(z))
-// localStorage.setItem("matches",JSON.stringify(match))
+    let  reservmatch= z.find(x => x.idreserv==a)
+    let matchreserve=match.find(x => x.id==reservmatch.idmatch)
+    console.log(reservmatch.idmatch);
+    let nbsallematch=matchreserve.nbplace;
+    let nbplacesReserve =reservmatch.reservnbre;
+    let newNbPlaces= Number(nbsallematch)-Number(nbplacesReserve)
+    console.log(newNbPlaces);
+    console.log(a);
+   // console.log(reservmatch.reservnbre);
+   matchreserve.nbplace=newNbPlaces.toString();
+    reservmatch.etat=true;
+    // console.log(matchreserve);
+    z.splice(a-1,1);
+    match.splice(matchreserve.id-1,1)
+console.log(matchreserve.id);
+localStorage.setItem("reservmatch",JSON.stringify(z))
+localStorage.setItem("matches",JSON.stringify(match))
 
-// window.location.reload()
+window.location.reload()
 // document.getElementById("cardmatch").innerHTML= matche
   
 
