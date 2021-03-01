@@ -76,7 +76,7 @@ function reservation(){
     console.log(usser.id);
     console.log(reserv);
     console.log(nbre);
-    let reservmatch={idreserv:c,idmatch:ID,iduser:usser.id,reservnbre:nbre,reservprix:reserv,etat:"false"}
+    let reservmatch={idreserv:c,idmatch:ID,iduser:usser.id,reservnbre:nbre,reservprix:reserv,etat:false}
     z.push(reservmatch);
     localStorage.setItem("reservmatch",JSON.stringify(z));
    
