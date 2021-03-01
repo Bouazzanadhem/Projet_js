@@ -28,7 +28,7 @@ function addmatch(){
                         <span class="small">${x.date[5]+x.date[6]}</span>
                         </a>
                     </span>
-                    <a  class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
+                    <a  class="d-block zoom"><img src="${x.img[0]}" alt=""
                     class="img-fluid news-image" /></a>
                     <div class="blog-info">
                     <a class="category">${x.salle}</a>
@@ -51,7 +51,7 @@ function addmatch(){
                         <span class="small">${x.date[5]+x.date[6]}</span>
                         </a>
                     </span>
-                    <a  class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
+                    <a  class="d-block zoom"><img src="${x.img[0]}" alt=""
                     class="img-fluid news-image" /></a>
                     <div class="blog-info">
                     <p><a href="" class="category default">${x.salle}</a></p>
@@ -73,7 +73,7 @@ function addmatch(){
                         <span class="small">${x.date[5]+x.date[6]}</span>
                         </a>
                     </span>
-                    <a class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
+                    <a class="d-block zoom"><img src="${x.img[0]}" alt=""
                     class="img-fluid news-image" /></a>
                     <div class="blog-info">
                     <a href="#category" class="category">${x.salle}</a>
@@ -100,7 +100,7 @@ function addmatch(){
                             <span class="small">${x.date[5]+x.date[6]}</span>
                             </a>
                         </span>
-                        <a class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
+                        <a class="d-block zoom"><img src="${x.img[0]}" alt=""
                         class="img-fluid news-image" /></a>
                         <div class="blog-info">
                         <a href="#category" class="category">${x.salle}</a>
@@ -175,7 +175,7 @@ function recherche(){
                         <span class="small">${x.date[5]+x.date[6]}</span>
                         </a>
                     </span>
-                    <a  class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
+                    <a  class="d-block zoom"><img src="${x.img[0]}" alt=""
                     class="img-fluid news-image" /></a>
                     <div class="blog-info">
                     <a href="#category" class="category">${x.salle}</a>
@@ -198,7 +198,7 @@ function recherche(){
                         <span class="small">${x.date[5]+x.date[6]}</span>
                         </a>
                     </span>
-                    <a  class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
+                    <a  class="d-block zoom"><img src="${x.img[0]}" alt=""
                     class="img-fluid news-image" /></a>
                     <div class="blog-info">
                     <a href="#category" class="category">${x.salle}</a>
@@ -220,7 +220,7 @@ function recherche(){
                         <span class="small">${x.date[5]+x.date[6]}</span>
                         </a>
                     </span>
-                    <a class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
+                    <a class="d-block zoom"><img src="${x.img[0]}" alt=""
                     class="img-fluid news-image" /></a>
                     <div class="blog-info">
                     <a href="#category" class="category">${x.salle}</a>
@@ -247,7 +247,7 @@ function recherche(){
                             <span class="small">${x.date[5]+x.date[6]}</span>
                             </a>
                         </span>
-                        <a class="d-block zoom"><img src="assets/images/p1.jpg" alt=""
+                        <a class="d-block zoom"><img src="${x.img[0]}" alt=""
                         class="img-fluid news-image" /></a>
                         <div class="blog-info">
                         <a href="#category" class="category">${x.salle}</a>
