@@ -13,14 +13,14 @@ function addmatch(){
         match +=`
             <div class="col-lg-4 col-md-6 mt-md-0 mt-5">
                 <div class="grids5-info">
-                <span class="posted-date">
-                <a href="#blog-single">
-                <span class="small">${x.date[0]+x.date[1]+x.date[2]+x.date[3]}</span>
-                <span class="big">${x.date[8]+x.date[9]}</span>
-                <span class="small">${x.date[5]+x.date[6]}</span>
-                </a>
-                   </span>
-                    <a href="reservation.html" class="d-block zoom"><img src="assets/images/1200px-Dean_Smith_Center1.jpg" alt=""
+                    <span class="posted-date">
+                        <a href="#blog-single">
+                        <span class="small">${x.date[0]+x.date[1]+x.date[2]+x.date[3]}</span>
+                        <span class="big">${x.date[8]+x.date[9]}</span>
+                        <span class="small">${x.date[5]+x.date[6]}</span>
+                        </a>
+                    </span>
+                    <a href="reservation.html" class="d-block zoom"><img src="${x.img[0]}" alt=""
                     class="img-fluid news-image" /></a>
                     <div class="blog-info">
                     <h3> <a href="#category" class="fas fa-basketball-ball">  NBA World Cup</a></h3>
