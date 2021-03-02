@@ -73,14 +73,10 @@ function affichage(){
     let  loginn  =p.find(x => x.email==email && x.mdp==password);
     localStorage.setItem("UserConnecté",JSON.stringify(loginn));
     let notreserved = matchreserved.find(x => x.etat == false);
-    // setTimeout(()=>{
-       
-    // },2000)
     let reserved = matchreserved.find(x=> x.etat == true && x.iduser == loginn.id);
-        console.log(reserved)
+    console.log(reserved);
     console.log(notreserved);
-    ;
-    
+
       let moudall=``;
       matchreserved.forEach(x => {
           console.log(x.etat);
@@ -129,57 +125,6 @@ function affichage(){
         }
       });
     document.getElementById("staticBackdrop").innerHTML = moudall
-    
-//     matchreserved.forEach(x => {
-//       // console.log(x);
-//       // console.log(x.etat);
-//       if ((x.etat == false)&&(loginn.role == "admin")){
-// <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-//   <div class="modal-dialog modal-dialog-centered">
-//     <div class="modal-content">
-//       <div class="modal-header">
-//         <h5 class="modal-title" id="staticBackdropLabel">Reservation</h5>
-//         <div class="spinner-border text-warning" role="status">
-//           <span class="visually-hidden"></span>
-//         </div>
-//       </div>
-//       <div class="modal-body">
-//         <h2>Vous Avez une reservation a acceptée</h2>
-//       </div>
-//       <div class="modal-footer">
-//         <button type="button" onclick="redirect()" class="btn btn-primary">D'accord</button>
-//       </div>
-//     </div>
-//   </div>
-// </div>
-//     } else if ((x.etat == true)&&(x.iduser == loginn.id)&&(loginn.role == "user")) {
-//       <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-//                   <div class="modal-dialog modal-dialog-centered">
-//                   <div class="modal-content">
-//                   <div class="modal-header">
-//                     <h5 class="modal-title" id="staticBackdropLabel">Reservation</h5>
-//                     <div class="spinner-border text-warning" role="status">
-//                     <span class="visually-hidden"></span>
-//                     </div>
-//                   </div>
-//                 <div class="modal-body">
-//                 <h2>Votre réservation a été confirmé</h2>
-//                 </div>
-//                 <div class="modal-footer">
-//                   <button type="button" onclick="redirect()" class="btn btn-primary">D'accord</button>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//     }else{
-//       if (loginn.role == "admin"){
-//         window.location.replace("admin.html")
-        
-//       }else {
-//       window.location.replace("user.html")  
-//       }
-//     }
-//     });
 }
 
 
@@ -189,6 +134,11 @@ function logOut() {
   
 }
 function redirect() {
+    // let z =localStorage.getItem("users");
+    // let p =JSON.parse(z);
+    // let email=document.getElementById("w3lName").value
+    // let password=document.getElementById("w3lSender").value
+    // let  loginn  =p.find(x => x.email==email && x.mdp==password);
     let p=localStorage.getItem("UserConnecté");
     let loginn = JSON.parse(p);
     if (loginn.role == "admin"){

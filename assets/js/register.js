@@ -1,4 +1,4 @@
-var p =localStorage.getItem("users");
+var p =localStorage.getItem("users")||[];
 var z=JSON.parse(p)
 function register(){
     let fname = document.getElementById("fname").value;

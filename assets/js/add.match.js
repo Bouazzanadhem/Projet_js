@@ -30,7 +30,7 @@ function AddMatch(){
     
     let a = document.getElementById("inputState1").value;
     let b = document.getElementById("inputState2").value;
-console.log(b ,"select team2");
+    console.log(b ,"select team2");
     let c= document.getElementById("inputState3").value;
 
 
