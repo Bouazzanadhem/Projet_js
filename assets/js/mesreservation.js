@@ -358,6 +358,8 @@ function recherche(){
 function imprimer(divName,a){
     console.log(divName);
     console.log(a);
+    var d = new Date();
+    var n = d.getTime();
     let printContents = ``;
     matchreserved.forEach(x => {
         if (x.idreserv == a) {
@@ -371,7 +373,7 @@ function imprimer(divName,a){
                  <strong>Nom du client : </strong><span>${usser.fname} ${usser.lname}</span>
                  <h3 class="" id="nbrplace">Nombre de place Réservé : ${x.reservnbre}</h3>
                  <h3 class="" id="prixx">Prix Total : ${x.reservprix}</h3>
-                 <p class=""></p>
+                 <p class="">${n}</p>
                 </div>`   
                 }
             });
@@ -382,5 +384,8 @@ function imprimer(divName,a){
     document.body.innerHTML = printContents;     
     window.print();     
     document.innerHTML = originalContents;
+    window.location.reload();
+
+
 
 }
