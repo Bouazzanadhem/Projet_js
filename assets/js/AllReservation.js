@@ -38,7 +38,7 @@ var j;
                  <h4><a href="#blog-single">  ${x.team1} VS ${x.team2}</a></h4>
                  <h5 class="" id="arena"> Salle:  ${x.salle}</h5>
                  <p>Reamining Seats : ${x.nbplace}</p>
-                 <p> Price: ${j.reservprix} </p>
+                 <p> Price: ${j.reservprix} $ </p>
                  <p> Reserve number: ${j.reservnbre} </p>
                  <p> Reserve id: ${j.idreserv} </p>
    
