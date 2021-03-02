@@ -358,8 +358,9 @@ function recherche(){
 function imprimer(divName,a){
     console.log(divName);
     console.log(a);
-    var d = new Date();
-    var n = d.getTime();
+    // var d = new Date();
+    // var n = d.getTime();
+    var Z = Math.random().toString(16).substring(3, 20)
     let printContents = ``;
     matchreserved.forEach(x => {
         if (x.idreserv == a) {
@@ -373,7 +374,7 @@ function imprimer(divName,a){
                  <strong>Nom du client : </strong><span>${usser.fname} ${usser.lname}</span>
                  <h3 class="" id="nbrplace">Nombre de place Réservé : ${x.reservnbre}</h3>
                  <h3 class="" id="prixx">Prix Total : ${x.reservprix}</h3>
-                 <p class="">${n}</p>
+                 <p class="">${Z}</p>
                 </div>`   
                 }
             });
