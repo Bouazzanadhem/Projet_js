@@ -130,8 +130,10 @@ console.log(j.idreserv);
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"><a href="#category" ></a></h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title" id="staticBackdropLabel">Acceptation</h5>
+        <div class="spinner-border text-warning" role="status">
+        <span class="visually-hidden"></span>
+      </div>
         </div>
         <div class="modal-body">
         <h5> <a href="#category" > Match accepted by Admin </a></h5>
@@ -236,7 +238,7 @@ function DeletereservedMatch() {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"><a href="#category" ></a></h5>
+<h5 class="modal-title" id="staticBackdropLabel">Reservation</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
