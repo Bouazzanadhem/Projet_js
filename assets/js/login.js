@@ -33,7 +33,22 @@ function affichage(){
                 </div>
                 <button  onclick="login()" class=" btn btn-primary btn-style mt-3"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">login</button>
                 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                  
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Reservation</h5>
+                        <div class="spinner-border text-warning" role="status">
+                        <span class="visually-hidden"></span>
+                        </div>
+                        </div>
+                        <div class="modal-body">
+                        <h2>Veuillez attendre  l'acceptation de l'admin</h2>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" onclick="redirect()" class="btn btn-primary">D'accord</button>
+                        </div>
+                    </div>
+                  </div>
                 </div>
                 <p style ="padding-top: 30px" class="text-center dont-do text-secondary">Don't have an account?
                   <a href="register.html" class="text-theme-2 font-weight-bold">Register Now</a>
