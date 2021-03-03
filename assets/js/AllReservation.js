@@ -38,7 +38,6 @@ function Reservedmatch(){
                  <p>Reamining Seats : ${x.nbplace}</p>
                  <p> Price: ${j.reservprix} $ </p>
                  <p> Reserve number: ${j.reservnbre} </p>
-                 <p> Reserve id: ${j.idreserv} </p>
    
                  <div class="top-quote mt-lg-0">
              
