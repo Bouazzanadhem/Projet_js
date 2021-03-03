@@ -72,16 +72,17 @@ function affichage(){
     let password=document.getElementById("w3lSender").value
     let  loginn  =p.find(x => x.email==email && x.mdp==password);
     localStorage.setItem("UserConnecté",JSON.stringify(loginn));
-    let notreserved = matchreserved.find(x => x.etat == false);
-    let reserved = matchreserved.find(x=> x.etat == true && x.iduser == loginn.id);
-    console.log(reserved);
-    console.log(notreserved);
+    let notreserved = matchreserved.filter(x => x.etat == false);
+    let reserved = matchreserved.filter(x=> x.etat == true && x.iduser == loginn.id);
 
+    console.log(reserved.length);
+    console.log(notreserved.length);
       let moudall=``;
       matchreserved.forEach(x => {
           console.log(x.etat);
         if (loginn.role == "admin"){
-            if (notreserved != null) {
+         
+            if (notreserved.length != 0) {
                 moudall=`<div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                 <div class="modal-header">
@@ -91,7 +92,7 @@ function affichage(){
                       </div>
                         </div>
                         <div class="modal-body">
-                        <h2>Vous avez une reservation a acceptée</h2>
+                        <h2>Vous avez ${notreserved.length} reservation a acceptée</h2>
                         </div>
                         <div class="modal-footer">
                         <button type="button" onclick="redirect()" class="btn btn-primary">D'accord</button>
@@ -101,8 +102,8 @@ function affichage(){
             }else{
                 window.location.replace("admin.html")
             }
-        }else if ((x.iduser == loginn.id)&&(loginn.role == "user")){
-            if (reserved != null){
+        }else if ((loginn.role == "user")){
+            if (reserved.length != 0 ){
                 moudall=`<div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                 <div class="modal-header">
@@ -112,7 +113,7 @@ function affichage(){
                       </div>
                         </div>
                         <div class="modal-body">
-                        <h2>Votre réservation a été confirmé</h2>
+                        <h2>Vous avez ${reserved.length} réservation a été confirmé</h2>
                         </div>
                         <div class="modal-footer">
                         <button type="button" onclick="redirect()" class="btn btn-primary">D'accord</button>
@@ -120,7 +121,24 @@ function affichage(){
                     </div>
                   </div>`
             }else{
-                window.location.replace("user.html")
+              
+                // window.location.replace("user.html")
+                moudall=`<div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header">
+                
+                <div class="spinner-border text-warning" role="status">
+                  <span class="visually-hidden"></span>
+                      </div>
+                        </div>
+                        <div class="modal-body">
+                        <h2>Welcome to your Home</h2>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" onclick="redirect()" class="btn btn-primary">Thanks</button>
+                        </div>
+                    </div>
+                  </div>`
             }
         }
       });
