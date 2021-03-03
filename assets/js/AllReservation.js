@@ -55,7 +55,7 @@ function Reservedmatch(){
        <div class="modal-dialog">
          <div class="modal-content">
            <div class="modal-header">
-             <h5 class="modal-title" id="exampleModalLabel"><a href="#category" ></a></h5>
+             <h5 class="modal-title" id="exampleModalLabel"><a href="#category" ></a>Acceptation of match</h5>
              <div class="spinner-border text-warning" role="status">
              <span class="sr-only"></span>
            </div>           </div>
